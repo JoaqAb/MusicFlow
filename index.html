@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Joaquin Abuin" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link href="styles.css" rel="stylesheet" />
+
+    <!-- Fonts & icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/d8ca64c014.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>MusicFlow</title>
+  </head>
+
+  <body>
+    <div
+      class="main-box container-fluid p-0 d-flex flex-column justify-content-start h-100"
+    >
+      <!-- Banner -->
+      <div class="bg-image"></div>
+
+      <!-- Navbar -->
+      <nav class="navbar w-100 position-fixed top-0 left-0 z-2">
+        <div
+          class="container-fluid w-100 d-flex justify-content-between align-items-center"
+        >
+          <div class="col-4 container-fluid">
+            <a class="navbar-brand d-flex gap-2" href="#">
+              <img
+                src="./Resources/logo_provisorio.png"
+                alt="Logo"
+                width="30"
+                class="d-inline-block align-text-top"
+              />
+              <span class="text-white"> MusicFlow </span>
+            </a>
+          </div>
+
+          <div class="col-4 d-flex justify-content-between align-items-center">
+            <div>
+              <h4 class="d-none d-lg-block">Inicio</h4>
+              <i class="fa-solid fa-house d-lg-none"></i>
+            </div>
+            <div>
+              <h4 class="d-none d-lg-block">Explorar</h4>
+              <i class="fa-regular fa-compass d-lg-none"></i>
+            </div>
+            <div>
+              <h4 class="d-none d-lg-block">Biblioteca</h4>
+              <i class="fa-solid fa-music d-lg-none"></i>
+            </div>
+            <div class="nav-item dropdown">
+              <a
+                class="d-flex align-items-center nav-link"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <h4 class="d-none d-xl-block">Buscar</h4>
+                <i class="fa-solid fa-magnifying-glass d-xl-none"></i>
+              </a>
+              <div class="dropdown-menu">
+                <form class="d-flex px-2" role="search">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">
+                    Search
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 container-fluid d-flex justify-content-end pe-0">
+            <a class="navbar-brand d-flex gap-2" href="#">
+              <img
+                src="./Resources/user.png"
+                alt="Logo"
+                width="30"
+                class="d-inline-block align-text-top"
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Botones a secciones -->
+      <div
+        class="but-container p-0 container-fluid w-100 d-flex justify-content-center"
+      >
+        <div id="buttons">
+          <button type="button" class="btn mx-2">Energía</button>
+          <button type="button" class="btn mx-2">Relajación</button>
+          <button type="button" class="btn mx-2">Desplazamientos</button>
+          <button type="button" class="btn mx-2">Concentración</button>
+          <button type="button" class="btn mx-2">Entretenimiento</button>
+        </div>
+      </div>
+
+      <main>
+        <section id="descubre" class="d-flex flex-column mt-5">
+          <!-- header section -->
+         
+
+          <!-- Body section con carousel -->
+          <div>
+            <div id="carouselExample" class="carousel slide">
+              <div class="carousel-inner mt-2 px-0">
+                <!-- Primera tanda del slider -->
+                <div class="carousel-item active">
+                  <div
+                    class="row d-flex"
+                    style="margin-left: 1px; margin-right: 1px"
+                  >
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/1.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/2.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/3.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/4.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Segunda tanda del slider -->
+                <div class="carousel-item">
+                  <div class="row" style="margin-left: 1px; margin-right: 1px">
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/5.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/6.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/7.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/8.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tercera tanda del slider -->
+                <div class="carousel-item">
+                  <div class="row" style="margin-left: 1px; margin-right: 1px">
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/9.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/10.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/11.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-3 d-flex p-0 justify-content-center">
+                      <div
+                        class="card d-inline-block"
+                        style="height: 85%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal1"
+                      >
+                        <img
+                          src="./Resources/12.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body px-1">
+                          <h5 class="card-title text-center fs-6"></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          
+        </section>
+
+        <section id="vuelve"> <div class="header-section container-fluid d-flex w-100">
+          <div class="col-6 d-flex align-items-center">
+            <h2 class="text-white m-0">Vuelve a escucharlo</h2>
+          </div>
+
+          <!-- Carousel control buttons -->
+          <div
+            class="col-6 d-flex justify-content-end align-items-center gap-5"
+          >
+            <button
+              class="bg-transparent border-0 p-0"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <i class="fa-regular fa-circle-left fa-2x text-white"></i>
+            </button>
+            <button
+              class="bg-transparent border-0 p-0"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <i class="fa-regular fa-circle-right fa-2x text-white"></i>
+            </button>
+          </div>
+
+        </div></section>
+
+        <section id="selecciones"> <div class="header-section container-fluid d-flex w-100">
+          <div class="col-6 d-flex align-items-center">
+            <h2 class="text-white m-0">Selecciones</h2>
+          </div>
+
+          <!-- Carousel control buttons -->
+          <div
+            class="col-6 d-flex justify-content-end align-items-center gap-5"
+          >
+            <button
+              class="bg-transparent border-0 p-0"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <i class="fa-regular fa-circle-left fa-2x text-white"></i>
+            </button>
+            <button
+              class="bg-transparent border-0 p-0"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <i class="fa-regular fa-circle-right fa-2x text-white"></i>
+            </button>
+          </div>
+
+        </div></section>
+
+        <section id="favoritos"> <div class="header-section container-fluid d-flex w-100">
+          <div class="col-6 d-flex align-items-center">
+            <h2 class="text-white m-0">Favoritos</h2>
+          </div>
+
+          <!-- Carousel control buttons -->
+          <div
+            class="col-6 d-flex justify-content-end align-items-center gap-5"
+          >
+            <button
+              class="bg-transparent border-0 p-0"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <i class="fa-regular fa-circle-left fa-2x text-white"></i>
+            </button>
+            <button
+              class="bg-transparent border-0 p-0"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <i class="fa-regular fa-circle-right fa-2x text-white"></i>
+            </button>
+          </div>
+
+        </div></section>
+
+        <section id="listas"> <div class="header-section container-fluid d-flex w-100">
+          <div class="col-6 d-flex align-items-center">
+            <h2 class="text-white m-0">Listas recomendadas</h2>
+          </div>
+
+          <!-- Carousel control buttons -->
+          <div
+            class="col-6 d-flex justify-content-end align-items-center gap-5"
+          >
+            <button
+              class="bg-transparent border-0 p-0"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <i class="fa-regular fa-circle-left fa-2x text-white"></i>
+            </button>
+            <button
+              class="bg-transparent border-0 p-0"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <i class="fa-regular fa-circle-right fa-2x text-white"></i>
+            </button>
+          </div>
+
+        </div></section>
+      </main>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./navbar.js"></script>
+  </body>
+</html>
