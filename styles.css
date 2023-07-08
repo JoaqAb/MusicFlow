@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #050505;
+  background-color: #000000;
   font-family: "Roboto", sans-serif;
   justify-content: center;
   align-items: center;
@@ -11,26 +11,19 @@ body {
 
 .bg-image {
   /* The image used */
-  background-image: url("./Resources/banner_back.webp");
+  background-image: url("./Resources/bg_image.png");
 
   display: flex;
   height: 250px;
   width: 100%;
   /* Add the blur effect */
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
 
-  z-index: ;
 
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
-}
 
-.container-fluid.bg-image {
-  position: relative;
 }
 
 .but-container {
@@ -44,7 +37,7 @@ body {
 .main-box {
   display: flex;
   flex-direction: column;
-  background-color: #050505;
+  background-color: #000000;
   justify-content: center;
   align-items: center;
 }
@@ -66,11 +59,11 @@ h4 {
 }
 
 .navbar.opaque {
-  background-color: #050505;
+  background-color: #000000;
 }
 
 #buttons {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   height: 260px;
@@ -93,7 +86,7 @@ h4 {
 section {
   display: flex;
   align-items: center;
-  height: 250px;
+  height: auto;
   width: 80vw;
 }
 
@@ -108,4 +101,6 @@ section {
 
 .card {
     max-width: 90%;
+    overflow: hidden;
+    border: none;
 }

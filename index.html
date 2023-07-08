@@ -21,6 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script
       src="https://kit.fontawesome.com/d8ca64c014.js"
       crossorigin="anonymous"
@@ -119,10 +120,36 @@
       </div>
 
       <main>
-        <section id="descubre" class="d-flex flex-column mt-5">
+        <!-- Vuelve a esucharlo -->
+        <section id="vuelve" class="d-flex flex-column mt-5">
           <!-- header section -->
-         
+          <div class="header-section container-fluid d-flex w-100">
+            <div class="col-6 d-flex align-items-center">
+              <h2 class="text-white m-0">Vuelve a escucharlo</h2>
+            </div>
 
+            <!-- Carousel control buttons -->
+            <div
+              class="col-6 d-flex justify-content-end align-items-center gap-5"
+            >
+              <button
+                class="bg-transparent border-0 p-0"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <i class="bi bi-arrow-left-circle fa-2x text-white"></i>
+              </button>
+              <button
+                class="bg-transparent border-0 p-0"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <i class="bi bi-arrow-right-circle fa-2x text-white"></i>
+              </button>
+            </div>
+          </div>
           <!-- Body section con carousel -->
           <div>
             <div id="carouselExample" class="carousel slide">
@@ -361,139 +388,129 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>          
+        </section>
+        <!-- Descubre -->
+        <section id="descubre">
+          <div class="header-section container-fluid d-flex w-100">
+            <div class="col-6 d-flex align-items-center">
+              <h2 class="text-white m-0">Descubre</h2>
+            </div>
 
+            <!-- Carousel control buttons -->
+            <div
+              class="col-6 d-flex justify-content-end align-items-center gap-5"
+            >
               <button
-                class="carousel-control-next"
+                class="bg-transparent border-0 p-0"
                 type="button"
                 data-bs-target="#carouselExample"
                 data-bs-slide="next"
               >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
+                <i class="fa-regular fa-circle-left fa-2x text-white"></i>
+              </button>
+              <button
+                class="bg-transparent border-0 p-0"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <i class="fa-regular fa-circle-right fa-2x text-white"></i>
               </button>
             </div>
           </div>
-          
         </section>
+        <!-- Selecciones -->
+        <section id="selecciones">
+          <div class="header-section container-fluid d-flex w-100">
+            <div class="col-6 d-flex align-items-center">
+              <h2 class="text-white m-0">Selecciones</h2>
+            </div>
 
-        <section id="vuelve"> <div class="header-section container-fluid d-flex w-100">
-          <div class="col-6 d-flex align-items-center">
-            <h2 class="text-white m-0">Vuelve a escucharlo</h2>
-          </div>
-
-          <!-- Carousel control buttons -->
-          <div
-            class="col-6 d-flex justify-content-end align-items-center gap-5"
-          >
-            <button
-              class="bg-transparent border-0 p-0"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
+            <!-- Carousel control buttons -->
+            <div
+              class="col-6 d-flex justify-content-end align-items-center gap-5"
             >
-              <i class="fa-regular fa-circle-left fa-2x text-white"></i>
-            </button>
-            <button
-              class="bg-transparent border-0 p-0"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <i class="fa-regular fa-circle-right fa-2x text-white"></i>
-            </button>
+              <button
+                class="bg-transparent border-0 p-0"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <i class="fa-regular fa-circle-left fa-2x text-white"></i>
+              </button>
+              <button
+                class="bg-transparent border-0 p-0"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <i class="fa-regular fa-circle-right fa-2x text-white"></i>
+              </button>
+            </div>
           </div>
+        </section>
+        <!-- Favoritos -->
+        <section id="favoritos">
+          <div class="header-section container-fluid d-flex w-100">
+            <div class="col-6 d-flex align-items-center">
+              <h2 class="text-white m-0">Favoritos</h2>
+            </div>
 
-        </div></section>
-
-        <section id="selecciones"> <div class="header-section container-fluid d-flex w-100">
-          <div class="col-6 d-flex align-items-center">
-            <h2 class="text-white m-0">Selecciones</h2>
-          </div>
-
-          <!-- Carousel control buttons -->
-          <div
-            class="col-6 d-flex justify-content-end align-items-center gap-5"
-          >
-            <button
-              class="bg-transparent border-0 p-0"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
+            <!-- Carousel control buttons -->
+            <div
+              class="col-6 d-flex justify-content-end align-items-center gap-5"
             >
-              <i class="fa-regular fa-circle-left fa-2x text-white"></i>
-            </button>
-            <button
-              class="bg-transparent border-0 p-0"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <i class="fa-regular fa-circle-right fa-2x text-white"></i>
-            </button>
+              <button
+                class="bg-transparent border-0 p-0"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <i class="fa-regular fa-circle-left fa-2x text-white"></i>
+              </button>
+              <button
+                class="bg-transparent border-0 p-0"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <i class="fa-regular fa-circle-right fa-2x text-white"></i>
+              </button>
+            </div>
           </div>
+        </section>
+        <!-- Listas -->
+        <section id="listas">
+          <div class="header-section container-fluid d-flex w-100">
+            <div class="col-6 d-flex align-items-center">
+              <h2 class="text-white m-0">Listas recomendadas</h2>
+            </div>
 
-        </div></section>
-
-        <section id="favoritos"> <div class="header-section container-fluid d-flex w-100">
-          <div class="col-6 d-flex align-items-center">
-            <h2 class="text-white m-0">Favoritos</h2>
-          </div>
-
-          <!-- Carousel control buttons -->
-          <div
-            class="col-6 d-flex justify-content-end align-items-center gap-5"
-          >
-            <button
-              class="bg-transparent border-0 p-0"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
+            <!-- Carousel control buttons -->
+            <div
+              class="col-6 d-flex justify-content-end align-items-center gap-5"
             >
-              <i class="fa-regular fa-circle-left fa-2x text-white"></i>
-            </button>
-            <button
-              class="bg-transparent border-0 p-0"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <i class="fa-regular fa-circle-right fa-2x text-white"></i>
-            </button>
+              <button
+                class="bg-transparent border-0 p-0"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <i class="fa-regular fa-circle-left fa-2x text-white"></i>
+              </button>
+              <button
+                class="bg-transparent border-0 p-0"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <i class="fa-regular fa-circle-right fa-2x text-white"></i>
+              </button>
+            </div>
           </div>
-
-        </div></section>
-
-        <section id="listas"> <div class="header-section container-fluid d-flex w-100">
-          <div class="col-6 d-flex align-items-center">
-            <h2 class="text-white m-0">Listas recomendadas</h2>
-          </div>
-
-          <!-- Carousel control buttons -->
-          <div
-            class="col-6 d-flex justify-content-end align-items-center gap-5"
-          >
-            <button
-              class="bg-transparent border-0 p-0"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <i class="fa-regular fa-circle-left fa-2x text-white"></i>
-            </button>
-            <button
-              class="bg-transparent border-0 p-0"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <i class="fa-regular fa-circle-right fa-2x text-white"></i>
-            </button>
-          </div>
-
-        </div></section>
+        </section>
       </main>
     </div>
 
