@@ -1,0 +1,159 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  font-family: 'Roboto', sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: #efefef;
+}
+
+.main-box {
+display: flex;
+flex-direction: column;
+background-color: transparent;
+width: 80vw;
+max-width: 1000px;
+justify-content: center;
+align-items: center;
+
+}
+
+.navbar {
+display: flex;
+background-color: #000000;
+color: white;
+}
+.link-nav a{
+  text-decoration: none;
+  color: white;
+}
+.link-nav h4:hover{
+color: #ff9800;
+cursor: pointer;
+}
+
+.titulo{
+  position: absolute;
+  top:100px
+}
+
+.btn-nosotros {
+  color: #ff9800;
+}
+.btn-nosotros:hover {
+  text-decoration: underline;
+}
+
+
+/* --------------------login-------------------- */
+
+.container .user{
+margin-top: 90px;
+margin-bottom: 90px;
+}
+.container .user .card{
+background-color: rgba(107, 107, 107, 0.208)
+}
+.container .user .card .mx-auto p{
+padding: 15px;
+font-size: 25px;
+margin: 0;
+color: #FFFFFF;
+}
+.container .user input{
+width: 100%;
+}
+.container .user .btn-light{
+background-color: rgb(201, 199, 203);
+margin-bottom: 10px;
+}
+.container .user .card .linea{
+height: 1px;
+margin-bottom: 19px;
+background-color: #e7e7e7;
+color: #FFFFFF;
+}
+.divisor-user{
+padding: 0px;
+display: flex;
+justify-content: center;
+}
+.container .user .card input{
+border: 1px solid rgba(0, 0, 0, 0.196);
+}
+.container .user .card .btn{
+background-color: #ff99006b;
+border: none;
+}
+.container .user .card .btn:hover{
+font-weight: 500;
+background-color: #ff9800;
+}
+.container .user .card .btn-regist{
+margin-bottom: 20px;   
+}
+.container .user .card .btn-regist a{
+color: #FFFFFF;
+text-decoration: none;
+display: flex;
+justify-content:space-evenly;
+align-items: center;
+}
+.container .user .card .btn-regist a:hover{
+color:#ff9800;
+text-decoration: underline;
+}
+
+/* ERROR 404 */
+.error404{
+margin-top: 60px;
+font-size: 30px;
+}
+.error404 h4{
+margin-top: 160px;
+font-size: 150px;
+font-weight: bolder;
+color:#ff9900cc;
+}
+.error404 .btn{
+background-color: #ff99006b;
+}
+.error404 .btn a{
+color: rgb(36, 36, 36);
+font-size: 20px;
+font-weight: 500;
+text-decoration:none;
+}
+.error404 .btn a:hover{
+color: #050505;
+}
+.error404 .btn:hover{
+background-color: #ff9800;
+}
+
+/* Breakpoints  */
+@media (min-width: 205px) {
+.container .error404 h4{
+
+  font-size: 70px;
+  margin-top: 150px;
+}
+}
+
+@media (min-width: 990px) {
+.user{
+  margin-left: 150px;
+  width: 70%;
+}
+.container .error404 h4{
+  font-size: 150px;
+  margin-top: 150px;
+}
+}
+
+
+
+
+
