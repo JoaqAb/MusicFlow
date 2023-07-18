@@ -15,7 +15,7 @@ body {
 
   display: flex;
   height: 250px;
-  width: 100%;
+  width: 140%;
   /* Add the blur effect */
 
 
@@ -48,6 +48,10 @@ a {
 
 h4 {
   margin: 0;
+}
+h4:hover{
+  cursor: pointer;
+  color:#ff9900cc;
 }
 
 .navbar {
@@ -104,3 +108,77 @@ section {
     overflow: hidden;
     border: none;
 }
+.link-nav a{
+  text-decoration: none;
+  color: white;
+}
+/* --------------------cambios de index-------------------- */
+.card{
+  border: 1px solid #ff990000;
+}
+.card-disc a{
+  text-decoration: none;
+  color: white;
+}
+.card-disc img{
+  border: 5px solid #ff990000;
+}
+.card-disc img:hover{
+  border: none;
+  cursor: pointer;
+}
+.secc-descubre .card{
+  border-radius: 50%;
+}
+.secc-descubre .card-body{
+  text-align: center;
+}
+/* -------------------- footer -------------------- */
+#pie {
+  background-color: rgba(28, 28, 28, 0.342);
+  width: 100%;
+  margin-top: 50px;
+}
+#pie .footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; 
+  }
+#pie .footerContent a {
+  color: white;
+  text-decoration: none;
+}
+#pie .footerContent h3 {
+      color: #ff9900cc;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+#pie .footerContent svg {
+      margin: 1rem;
+     }
+
+#pie .footerContent svg:hover {
+        cursor: pointer; }
+
+#pie .footerContent .bi-instagram:hover {
+      color: #8a3ab9; }
+
+#pie .footerContent .bi-facebook:hover {
+      color: #3b5998; }
+
+#pie .footerContent .bi-twitter:hover {
+      color: #00acee; }
+
+#pie .dev {
+    border-top: 1px solid #ff9900cc;
+    padding-top: 1rem;
+    color: #ff9900cc;
+    text-align: center;
+    font-size: 0.9rem; }
+#pie .dev a {
+      color: #ffc559;
+      font-weight: bold; }
+#pie .dev a:hover {
+        color: #ffa600; }

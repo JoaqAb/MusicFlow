@@ -1,0 +1,96 @@
+.link-nav a{
+    text-decoration: none;
+    color: white;
+  }
+.disc{
+    margin-top: 80px;
+}
+.disc-info{
+    display: flex;
+    margin-bottom: 20px;
+}
+.disc-info .img img{
+    border-radius: 2% 
+}
+.disc-info .descrip {
+    padding: 35px;
+    font-size: 14px;
+    color: rgb(176, 175, 175);
+}
+.disc-info .descrip h2{
+    color: white;
+}
+.disc .lista .lista-indic{
+    display: flex;
+    justify-content: end;
+}
+.disc .lista .tracks{
+    display: flex;
+    justify-content: space-between;
+}
+.disc .lista .tracks .title{
+    color: white;
+}
+.disc .lista .tracks span{
+    color: rgb(176, 175, 175);
+}
+.disc .lista .bi-play-fill:hover{
+    color: #ff9900cc;
+    cursor: pointer;
+}
+.disc .lista .bi-list-check:hover{
+    color: #ff9900cc;
+    cursor: pointer;
+}
+
+/* --------------------footer-------------------- */
+
+#pie {
+    background-color: rgba(28, 28, 28, 0.342);
+    width: 100%;
+    margin-top: 50px;
+  }
+  #pie .footerContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem; 
+    }
+  #pie .footerContent a {
+    color: white;
+    text-decoration: none;
+  }
+  #pie .footerContent h3 {
+        color: #ff9900cc;
+        font-weight: 400;
+        font-size: 18px;
+      }
+  
+  #pie .footerContent svg {
+        margin: 1rem;
+       }
+  
+  #pie .footerContent svg:hover {
+          cursor: pointer; }
+  
+  #pie .footerContent .bi-instagram:hover {
+        color: #8a3ab9; }
+  
+  #pie .footerContent .bi-facebook:hover {
+        color: #3b5998; }
+  
+  #pie .footerContent .bi-twitter:hover {
+        color: #00acee; }
+  
+  #pie .dev {
+      border-top: 1px solid #ff9900cc;
+      padding-top: 1rem;
+      color: #ff9900cc;
+      text-align: center;
+      font-size: 0.9rem; }
+  #pie .dev a {
+        color: #ffc559;
+        font-weight: bold; }
+  #pie .dev a:hover {
+          color: #ffa600; }
+  
