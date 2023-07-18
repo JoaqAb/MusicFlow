@@ -41,7 +41,7 @@ a {
   text-decoration: none;
 }
 
-h4 {
+h4, i {
   color: white;
   margin: 0;
 }
@@ -66,10 +66,10 @@ h4:hover {
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
-  height: 260px;
+  justify-content: center;
+  height: 250px;
   width: 100%;
   margin: 0;
-  padding-left: 10%;
   z-index: 1;
 }
 
@@ -93,6 +93,7 @@ section {
 .header-section {
   display: flex;
   height: 55px;
+  max-width: 1200px;
 }
 
 .carousel-item {
@@ -108,8 +109,10 @@ section {
   color: white;
 }
 /* --------------------cambios de index-------------------- */
-.card {
+.card-disc {
   border: 1px solid #ff990000;
+  max-width: 300px;
+  height: auto;
 }
 .card-disc a {
   text-decoration: none;
@@ -126,6 +129,7 @@ section {
 .rounded-img {
   border-radius: 50%;
   border: 1px solid #ff990000;
+  max-width: 250px;
 }
 
 /* .secc-descubre .card{
@@ -189,4 +193,32 @@ section {
 }
 #pie .dev a:hover {
   color: #ffa600;
+}
+
+@media (max-width: 400px) {
+  main {
+    width: 95%;
+    font-size: 8pt;
+  }
+  section {
+    width: 100%;
+    display: flex;
+    justify-content: between;
+  }
+  .btn {
+      font-size: 8pt;
+  }
+  .bg-image, #buttons {
+    height: 150px;
+  }
+  .card {
+    height: 10px;
+  }
+  .card-disc img{
+    border: none;
+  }
+  .card-disc {
+    height: fit-content;
+  }
+
 }
