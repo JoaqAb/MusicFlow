@@ -1,13 +1,13 @@
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: #000000;
-    font-family: 'Roboto', sans-serif;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    color: #efefef;
-  }
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  font-family: "Roboto", sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: #efefef;
+}
 
 .main-box {
   display: flex;
@@ -17,7 +17,6 @@ body {
   max-width: 1000px;
   justify-content: center;
   align-items: center;
-
 }
 
 .navbar {
@@ -25,103 +24,103 @@ body {
   background-color: #000000;
   color: white;
 }
-.link-nav h4:hover{
+.link-nav h4:hover {
   color: #ff9800;
   cursor: pointer;
 }
 
-.link-nav a{
+.link-nav a {
   text-decoration: none;
   color: white;
 }
 /* --------------------login-------------------- */
 
-.container .user{
+.container .user {
   margin-top: 90px;
   margin-bottom: 90px;
 }
-.container .user .card{
-  background-color: rgba(107, 107, 107, 0.208)
+.container .user .card {
+  background-color: rgba(107, 107, 107, 0.208);
 }
-.container .user .card .mx-auto p{
+.container .user .card .mx-auto p {
   padding: 15px;
   font-size: 25px;
   margin: 0;
-  color: #FFFFFF;
+  color: #ffffff;
 }
-.container .user input{
+.container .user input {
   width: 100%;
 }
-.container .user .btn-light{
+.container .user .btn-light {
   background-color: rgb(201, 199, 203);
   margin-bottom: 10px;
 }
-.container .user .card .linea{
+.container .user .card .linea {
   height: 1px;
   margin-bottom: 19px;
   background-color: #e7e7e7;
-  color: #FFFFFF;
+  color: #ffffff;
 }
-.divisor-user{
+.divisor-user {
   padding: 0px;
   display: flex;
   justify-content: center;
 }
-.container .user .card input{
+.container .user .card input {
   border: 1px solid rgba(0, 0, 0, 0.196);
 }
-.container .user .card .btn{
+.container .user .card .btn {
   background-color: #ff99006b;
   border: none;
 }
-.container .user .card .btn:hover{
+.container .user .card .btn:hover {
   font-weight: 500;
   background-color: #ff9800;
 }
-.container .user .card .btn-regist{
-  margin-bottom: 20px;   
+.container .user .card .btn-regist {
+  margin-bottom: 20px;
 }
-.container .user .card .btn-regist a{
-  color: #FFFFFF;
+.container .user .card .btn-regist a {
+  color: #ffffff;
   text-decoration: none;
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
 }
-.container .user .card .btn-regist a:hover{
-  color:#ff9800;
+.container .user .card .btn-regist a:hover {
+  color: #ff9800;
   text-decoration: underline;
 }
 
 /* -------------------- ERROR 404 -------------------- */
 
-.error404{
+.error404 {
   margin-top: 60px;
   font-size: 30px;
 }
-.error404 h4{
+.error404 h4 {
   margin-top: 160px;
   font-size: 150px;
   font-weight: bolder;
-  color:#ff9900cc;
+  color: #ff9900cc;
 }
-.error404 .btn{
+.error404 .btn {
   background-color: #ff99006b;
 }
-.error404 .btn a{
+.error404 .btn a {
   color: rgb(36, 36, 36);
   font-size: 20px;
   font-weight: 500;
-  text-decoration:none;
+  text-decoration: none;
 }
-.error404 .btn a:hover{
+.error404 .btn a:hover {
   color: #050505;
 }
-.error404 .btn:hover{
+.error404 .btn:hover {
   background-color: #ff9800;
 }
 /* detalles */
-.container .detalle{
+.container .detalle {
   margin-top: 80px;
 }
 
@@ -132,67 +131,71 @@ body {
   margin-top: 50px;
 }
 #pie .footerContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem; 
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
 #pie .footerContent a {
   color: white;
   text-decoration: none;
 }
 #pie .footerContent h3 {
-      color: #ff9900cc;
-      font-weight: 400;
-      font-size: 18px;
-    }
+  color: #ff9900cc;
+  font-weight: 400;
+  font-size: 18px;
+}
 
 #pie .footerContent svg {
-      margin: 1rem;
-     }
+  margin: 1rem;
+}
 
 #pie .footerContent svg:hover {
-        cursor: pointer; }
+  cursor: pointer;
+}
 
 #pie .footerContent .bi-instagram:hover {
-      color: #8a3ab9; }
+  color: #8a3ab9;
+}
 
 #pie .footerContent .bi-facebook:hover {
-      color: #3b5998; }
+  color: #3b5998;
+}
 
 #pie .footerContent .bi-twitter:hover {
-      color: #00acee; }
+  color: #00acee;
+}
 
 #pie .dev {
-    border-top: 1px solid #ff9900cc;
-    padding-top: 1rem;
-    color: #ff9900cc;
-    text-align: center;
-    font-size: 0.9rem; }
+  border-top: 1px solid #ff9900cc;
+  padding-top: 1rem;
+  color: #ff9900cc;
+  text-align: center;
+  font-size: 0.9rem;
+}
 #pie .dev a {
-      color: #ffc559;
-      font-weight: bold; }
+  color: #ffc559;
+  font-weight: bold;
+}
 #pie .dev a:hover {
-        color: #ffa600; }
-
+  color: #ffa600;
+}
 
 /* Breakpoints  */
 
-
 @media (min-width: 205px) {
-  .container .error404 h4{
-  
+  .container .error404 h4 {
     font-size: 70px;
     margin-top: 150px;
   }
 }
 
 @media (min-width: 990px) {
-  .user{
+  .user {
     margin-left: 150px;
     width: 70%;
   }
-  .container .error404 h4{
+  .container .error404 h4 {
     font-size: 150px;
     margin-top: 150px;
   }

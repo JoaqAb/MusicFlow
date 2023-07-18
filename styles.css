@@ -10,20 +10,15 @@ body {
 }
 
 .bg-image {
-  /* The image used */
   background-image: url("./Resources/bg_image.png");
 
   display: flex;
   height: 250px;
-  width: 140%;
-  /* Add the blur effect */
+  width: 100%;
 
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .but-container {
@@ -47,11 +42,12 @@ a {
 }
 
 h4 {
+  color: white;
   margin: 0;
 }
-h4:hover{
+h4:hover {
   cursor: pointer;
-  color:#ff9900cc;
+  color: #ff9900cc;
 }
 
 .navbar {
@@ -73,7 +69,7 @@ h4:hover{
   height: 260px;
   width: 100%;
   margin: 0;
-  padding-left: 8%;
+  padding-left: 10%;
   z-index: 1;
 }
 
@@ -95,39 +91,44 @@ section {
 }
 
 .header-section {
-    display: flex;
-    height: 55px;
+  display: flex;
+  height: 55px;
 }
 
 .carousel-item {
-    max-height: fit-content;
+  max-height: fit-content;
 }
 
 .card {
-    max-width: 90%;
-    overflow: hidden;
-    border: none;
+  overflow: hidden;
+  border: none;
 }
-.link-nav a{
+.link-nav a {
   text-decoration: none;
   color: white;
 }
 /* --------------------cambios de index-------------------- */
-.card{
+.card {
   border: 1px solid #ff990000;
 }
-.card-disc a{
+.card-disc a {
   text-decoration: none;
   color: white;
 }
-.card-disc img{
+.card-disc img {
   border: 5px solid #ff990000;
 }
-.card-disc img:hover{
+.card-disc img:hover {
   border: none;
   cursor: pointer;
 }
-.secc-descubre .card{
+
+.rounded-img {
+  border-radius: 50%;
+  border: 1px solid #ff990000;
+}
+
+/* .secc-descubre .card{
   border-radius: 50%;
 }
 .secc-descubre .card-body{
@@ -140,45 +141,52 @@ section {
   margin-top: 50px;
 }
 #pie .footerContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem; 
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
 #pie .footerContent a {
   color: white;
   text-decoration: none;
 }
 #pie .footerContent h3 {
-      color: #ff9900cc;
-      font-weight: 400;
-      font-size: 18px;
-    }
+  color: #ff9900cc;
+  font-weight: 400;
+  font-size: 18px;
+}
 
 #pie .footerContent svg {
-      margin: 1rem;
-     }
+  margin: 1rem;
+}
 
 #pie .footerContent svg:hover {
-        cursor: pointer; }
+  cursor: pointer;
+}
 
 #pie .footerContent .bi-instagram:hover {
-      color: #8a3ab9; }
+  color: #8a3ab9;
+}
 
 #pie .footerContent .bi-facebook:hover {
-      color: #3b5998; }
+  color: #3b5998;
+}
 
 #pie .footerContent .bi-twitter:hover {
-      color: #00acee; }
+  color: #00acee;
+}
 
 #pie .dev {
-    border-top: 1px solid #ff9900cc;
-    padding-top: 1rem;
-    color: #ff9900cc;
-    text-align: center;
-    font-size: 0.9rem; }
+  border-top: 1px solid #ff9900cc;
+  padding-top: 1rem;
+  color: #ff9900cc;
+  text-align: center;
+  font-size: 0.9rem;
+}
 #pie .dev a {
-      color: #ffc559;
-      font-weight: bold; }
+  color: #ffc559;
+  font-weight: bold;
+}
 #pie .dev a:hover {
-        color: #ffa600; }
+  color: #ffa600;
+}
