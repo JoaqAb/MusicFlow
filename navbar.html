@@ -9,7 +9,7 @@
     class="container-fluid w-100 d-flex justify-content-between align-items-center"
   >
     <div class="col-4 container-fluid">
-      <a class="navbar-brand d-flex gap-2" href="#">
+      <a class="navbar-brand d-flex gap-2" href="./index.html">
         <img
           src="./Resources/logo_provisorio.png"
           alt="Logo"
@@ -49,12 +49,13 @@
         <div class="dropdown-menu">
           <form class="d-flex px-2" role="search">
             <input
+              id="search"
               class="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn" type="submit">
               Search
             </button>
           </form>
@@ -63,7 +64,11 @@
     </div>
 
     <div class="col-4 container-fluid d-flex justify-content-end pe-0">
-      <a class="navbar-brand d-flex gap-2" href="./login.html">
+      <a
+        class="navbar-brand d-flex gap-2"
+        data-bs-toggle="modal"
+        data-bs-target="#modallogin"
+      >
         <img
           src="./Resources/user.png"
           alt="Logo"
