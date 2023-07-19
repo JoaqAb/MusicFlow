@@ -1200,6 +1200,7 @@
                           name="email"
                           class="form-control"
                           required="required"
+                          autocomplete="off"
                         />
                       </div>
 
@@ -1215,6 +1216,8 @@
                           required="required"
                         />
                       </div>
+
+                      <div id="mensajeModal" class="mt-2"></div>
 
                       <div class="form-group d-flex gap-3 mt-3">
                         <div class="col-6 w-auto">
@@ -1277,6 +1280,20 @@
                   <div>
                     <form id="registroForm" novalidate>
                       <div class="form-group">
+                        <label>Nombre:</label>
+                        <input
+                          autofocus
+                          type="text"
+                          placeholder="Nombre"
+                          maxlength="12"
+                          id="registroNombre"
+                          name="nombre"
+                          class="form-control"
+                          required="required"
+                          autocomplete="off"
+                        />
+                      </div>
+                      <div class="form-group mt-3">
                         <label>Email:</label>
                         <input
                           autofocus
@@ -1288,7 +1305,6 @@
                           required="required"
                         />
                       </div>
-
                       <div class="form-group mt-3">
                         <label>Contraseña:</label>
                         <input
@@ -1301,6 +1317,8 @@
                           required="required"
                         />
                       </div>
+
+                      <div id="mensajeModal"></div>
 
                       <div class="form-group d-flex gap-3 mt-3">
                         <div class="col-6 w-auto">
@@ -1326,27 +1344,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Toast -->
-
-    <div id="toast-container">
-      <div
-        class="toast align-items-center align-self-center"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
-        <div class="d-flex">
-          <div class="toast-body"></div>
-          <button
-            type="button"
-            class="btn-close me-2 m-auto"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
         </div>
       </div>
     </div>
@@ -1405,6 +1402,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./navbar.js"></script>
-    <script src="./login.js"></script>
+    <script src="./usuarios.js".js"></script>
   </body>
 </html>
