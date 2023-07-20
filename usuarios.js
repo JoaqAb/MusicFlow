@@ -107,6 +107,50 @@ function iniciarSesion(event) {
   }
 }
 
+// Generar filas para la tabla con los usuarios registrados
+function generarTablaUsuarios() {
+  const usuarios = obtenerUsuarios();
+  const tablaUsuarios = document.getElementById("tablaUsuarios").getElementsByTagName("tbody")[0];
+
+  // Limpiar contenido actual de la tabla
+  tablaUsuarios.innerHTML = "";
+
+  // Generar filas para cada usuario
+  usuarios.forEach(usuario => {
+    const fila = document.createElement("tr");
+    
+    // Columna Nombre
+    const columnaNombre = document.createElement("td");
+    columnaNombre.textContent = usuario.nombre;
+    fila.appendChild(columnaNombre);
+
+    // Columna Email
+    const columnaEmail = document.createElement("td")
+    columnaEmail.textContent = usuario.email;
+    fila.appendChild(columnaEmail);
+
+    // Columna Acciones
+    const columnaAcciones = document.createElement("td");
+    const botonEliminar = document.createElement("button");
+    botonEliminar.textContent = "Eliminar";
+    botonEliminar.addEventListener("click", () => {
+      eliminarUsuario(usuario);
+    });
+    columnaAcciones.appendChild(botonEliminar);
+    fila.appendChild(columnaAcciones);
+
+    // Agregar fila a la tabla
+    tablaUsuarios.appendChild(fila);
+  });
+}
+// Eliminar usuario de la lista y actualizar tabla
+function eliminarUsuario(usuario) {
+  const usuarios = obtenerUsuarios();
+  const usuariosActualizados = usuarios.filter(u => u.email !== usuario.email);
+  guardarUsuarios(usuariosActualizados);
+  generarTablaUsuarios();
+}
+
 // Eventos
 
 // Evento para formulario de registro
@@ -115,5 +159,10 @@ registroForm.addEventListener("submit", guardarRegistro);
 // Evento para inicio de sesión
 const loginForm = document.getElementById("modallogin").querySelector("form");
 loginForm.addEventListener("submit", iniciarSesion);
+
+// Evento para cargar tabla de usuarios
+document.addEventListener("DOMContentLoaded", () => {
+  generarTablaUsuarios();
+});
 
 // Flujo principal
