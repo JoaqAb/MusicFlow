@@ -77,20 +77,6 @@ section {
   height: auto;
   width: 80vw;
 }
-.sub-table {
-  background-color: #ff9800;
-  height: 35px;
-  border-radius: 5px;
-  color: #000000;
-  font-weight: 400;
-}
-
-.custom-table {
-  border: solid 1px #ff9800;
-  border-radius: 5px;
-  background-color: #000000;
-  text-align: center;
-}
 
 select {
   background-color: transparent;
@@ -106,3 +92,96 @@ td {
   font-weight: 400;
   padding: 3px 8px;
 }
+
+#buscadorCanciones {
+  border-color: #ff9800;
+}
+#buscadorCanciones::placeholder {
+  color: #ff9800;
+}
+
+.form-control:focus {
+  outline: 4px solid #ff9800;
+  box-shadow: none;
+}
+
+.table-container {
+  border: solid 1px #ff9800;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.sub-table {
+  background-color: #ff9800;
+  height: 35px;
+  border-radius: 5px;
+  color: #000000;
+  font-weight: 400;
+}
+
+.custom-table {
+  width: 100%;
+  background-color: #000000;
+  text-align: center;
+  max-height: 300px;
+  table-layout: fixed;
+}
+
+.custom-table thead {
+  color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #ff9800;
+}
+
+.custom-table th:nth-child(1),
+.custom-table td:nth-child(1) {
+  width: 10%;
+}
+
+.custom-table th:nth-child(2),
+.custom-table td:nth-child(2),
+.custom-table th:nth-child(3),
+.custom-table td:nth-child(3) {
+  width: 40%;
+}
+
+.custom-table th:nth-child(4),
+.custom-table td:nth-child(4) {
+  width: 10%;
+}
+
+.usuarios th:nth-child(1),
+.usuarios td:nth-child(1) {
+  width: 30%;
+}
+
+.usuarios th:nth-child(2),
+.usuarios td:nth-child(2) {
+  width: 60%;
+}
+
+.usuarios th:nth-child(3),
+.usuarios td:nth-child(3) {
+  width: 10%;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: #ff9800;
+  border-radius: 0px 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
