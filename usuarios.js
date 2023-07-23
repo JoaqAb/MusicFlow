@@ -11,7 +11,6 @@ const admin = {
   pass: "admin",
 };
 
-
 // Autofocus en los campos de correo electrónico
 const modalLogin = document.getElementById("modallogin");
 modalLogin.addEventListener("shown.bs.modal", function () {
@@ -54,7 +53,11 @@ function guardarRegistro(event) {
   const usuarios = obtenerUsuarios();
 
   // Crear nuevo usuario con los datos ingresados
-  const nuevoUsuario = { nombre: registroNombreValue, email: registroEmailValue, pass: registroPassValue };
+  const nuevoUsuario = {
+    nombre: registroNombreValue,
+    email: registroEmailValue,
+    pass: registroPassValue,
+  };
 
   // Agregar nuevo usuario a la lista
   usuarios.push(nuevoUsuario);
@@ -93,6 +96,9 @@ function iniciarSesion(event) {
 
   // Verificar si es admin
   if (loginEmailValue === admin.email && loginPassValue === admin.pass) {
+    // Almacenar admin en localStorage
+    localStorage.setItem("token", true);
+
     window.location.href = "admin.html";
     return;
   }
@@ -110,22 +116,24 @@ function iniciarSesion(event) {
 // Generar filas para la tabla con los usuarios registrados
 function generarTablaUsuarios() {
   const usuarios = obtenerUsuarios();
-  const tablaUsuarios = document.getElementById("tablaUsuarios").getElementsByTagName("tbody")[0];
+  const tablaUsuarios = document
+    .getElementById("tablaUsuarios")
+    .getElementsByTagName("tbody")[0];
 
   // Limpiar contenido actual de la tabla
   tablaUsuarios.innerHTML = "";
 
   // Generar filas para cada usuario
-  usuarios.forEach(usuario => {
+  usuarios.forEach((usuario) => {
     const fila = document.createElement("tr");
-    
+
     // Columna Nombre
     const columnaNombre = document.createElement("td");
     columnaNombre.textContent = usuario.nombre;
     fila.appendChild(columnaNombre);
 
     // Columna Email
-    const columnaEmail = document.createElement("td")
+    const columnaEmail = document.createElement("td");
     columnaEmail.textContent = usuario.email;
     fila.appendChild(columnaEmail);
 
@@ -146,7 +154,9 @@ function generarTablaUsuarios() {
 // Eliminar usuario de la lista y actualizar tabla
 function eliminarUsuario(usuario) {
   const usuarios = obtenerUsuarios();
-  const usuariosActualizados = usuarios.filter(u => u.email !== usuario.email);
+  const usuariosActualizados = usuarios.filter(
+    (u) => u.email !== usuario.email
+  );
   guardarUsuarios(usuariosActualizados);
   generarTablaUsuarios();
 }

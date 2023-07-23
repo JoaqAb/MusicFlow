@@ -43,13 +43,18 @@ a {
   color: white;
 }
 
+.bi-person-circle {
+  font-size: 2rem;
+}
 h4, i {
   color: white;
   margin: 0;
 }
-h4:hover {
+h4:hover, i:hover, .m-flow:hover {
   cursor: pointer;
   color: #ff9900cc;
+  transform: scale(1.1);
+  transition: .5s;
 }
 
 .navbar {

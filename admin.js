@@ -1,7 +1,15 @@
 // Var & const
 const buscador = document.getElementById("buscadorCanciones");
+const token = localStorage.getItem("token");
 
 // Funciones
+
+// Verificar usuario admin 
+if (!token) {
+  window.location.href = "error.html";
+} else {
+  localStorage.removeItem("token");
+}
 
 // Obtener usuarios almacenados en LocalStorage
 function obtenerUsuarios() {
