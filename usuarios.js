@@ -66,7 +66,11 @@ function guardarRegistro(event) {
   guardarUsuarios(usuarios);
 
   // Mostrar mensaje de registro exitoso
-  alert("Registro exitoso, Ahora puedes iniciar sesión.");
+  mostrarToast("Registro exitoso, Ahora puedes iniciar sesión.");
+
+   // Cerrar el modal de registro
+   const btnCerrarModal = document.getElementById("btnCerrarModal");
+   btnCerrarModal.click();
 
   // Limpiar formulario
   registroForm.reset();
@@ -175,4 +179,13 @@ document.addEventListener("DOMContentLoaded", () => {
   generarTablaUsuarios();
 });
 
+// Toast
+function mostrarToast(mensaje) {
+  const toast = document.getElementById("toast");
+  const toastBody = toast.querySelector(".toast-body");
+  toastBody.textContent = mensaje;
+
+  const toastInstance = new bootstrap.Toast(toast);
+  toastInstance.show();
+}
 // Flujo principal

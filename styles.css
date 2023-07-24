@@ -46,15 +46,18 @@ a {
 .bi-person-circle {
   font-size: 2rem;
 }
-h4, i {
+h4,
+i {
   color: white;
   margin: 0;
 }
-h4:hover, i:hover, .m-flow:hover {
+h4:hover,
+i:hover,
+.m-flow:hover {
   cursor: pointer;
   color: #ff9900cc;
   transform: scale(1.1);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .navbar {
@@ -74,7 +77,6 @@ h4:hover, i:hover, .m-flow:hover {
   transform: translateX(-75%);
   background-color: #000000;
 }
-
 
 #buttons {
   background-color: rgba(0, 0, 0, 0.4);
@@ -131,6 +133,74 @@ section {
   outline: 4px solid #ff9800;
   box-shadow: none;
 }
+
+.table-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+th {
+  border-bottom: solid 1px #ff9800;
+}
+
+td {
+  height: 3em;
+  border-bottom: solid 1px #ff9800;
+}
+
+th,
+td {
+  font-weight: 400;
+  padding: 3px 8px;
+}
+
+.sub-table {
+  background-color: #ff9800;
+  height: 35px;
+  border-radius: 5px;
+  color: #000000;
+  font-weight: 400;
+}
+
+.custom-table {
+  width: 100%;
+  background-color: #000000;
+  text-align: center;
+  max-height: 300px;
+  table-layout: fixed;
+}
+
+.custom-table thead {
+  color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #ff9800;
+}
+
+table th:nth-child(1),
+table td:nth-child(1) {
+  width: 10%;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: black;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #ff99006b;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #ff9800;
+}
+
 /* --------------------cambios de index-------------------- */
 .card-disc {
   border: 1px solid #ff990000;
@@ -182,12 +252,21 @@ section {
 }
 
 /* -------------------- Toast -------------------- */
-#toast-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+.toast {
+  position: fixed;
+  top: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: solid 1px #ff9800;
+  color: #000000;
+  z-index: 5;
 }
+
+.toast-header  {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  color: #000000;
+}
+
 
 /* -------------------- footer -------------------- */
 #pie {
@@ -248,7 +327,7 @@ section {
 
 /* -------------------- media querys -------------------- */
 
-@media (max-width: 400px) {
+@media (max-width: 576px) {
   main {
     width: 95%;
     font-size: 8pt;
@@ -259,19 +338,23 @@ section {
     justify-content: between;
   }
   .btn {
-      font-size: 8pt;
+    font-size: 8pt;
   }
-  .bg-image, #buttons {
+  .bg-image,
+  #buttons {
     height: 150px;
   }
 
-  .card-disc img{
+  .card-disc img {
     border: 1px;
   }
   .card-disc {
     height: fit-content;
   }
 
+  .table-container {
+    max-height: 200px;
+  }
 }
 
 @media (max-width: 650px) {
