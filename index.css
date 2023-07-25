@@ -33,7 +33,7 @@ body {
   text-decoration: none;
   color: white;
 }
-/* --------------------login-------------------- */
+/* Login */
 
 .container .user {
   margin-top: 90px;
@@ -92,7 +92,7 @@ body {
   text-decoration: underline;
 }
 
-/* -------------------- ERROR 404 -------------------- */
+/* ERROR 404 */
 
 .error404 {
   margin-top: 60px;
@@ -124,7 +124,7 @@ body {
   margin-top: 80px;
 }
 
-/* -------------------- footer -------------------- */
+/*  Footer */
 #pie {
   background-color: rgba(28, 28, 28, 0.342);
   width: 100%;

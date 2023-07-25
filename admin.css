@@ -144,7 +144,9 @@ td {
 }
 
 .custom-table th:nth-child(2),
-.custom-table td:nth-child(2),
+.custom-table td:nth-child(2) {
+  width: 35%;
+}
 .custom-table th:nth-child(3),
 .custom-table td:nth-child(3) {
   width: 40%;
@@ -152,22 +154,27 @@ td {
 
 .custom-table th:nth-child(4),
 .custom-table td:nth-child(4) {
-  width: 10%;
+  width: 15%;
 }
 
 .usuarios th:nth-child(1),
 .usuarios td:nth-child(1) {
-  width: 30%;
+  width: 10%;
 }
 
 .usuarios th:nth-child(2),
 .usuarios td:nth-child(2) {
-  width: 60%;
+  width: 35%;
 }
 
 .usuarios th:nth-child(3),
 .usuarios td:nth-child(3) {
-  width: 10%;
+  width: 40%;
+}
+
+.usuarios th:nth-child(4),
+.usuarios td:nth-child(4) {
+  width: 15%;
 }
 
 .table-container::-webkit-scrollbar {
@@ -188,11 +195,30 @@ td {
   background-color: #ff9800;
 }
 
+/* Login */
+
+.modal {
+  background-color: rgba(28, 28, 28, 0.342);
+}
+
+.modal-content {
+  background-color: rgb(28, 28, 28);
+}
+
+.log-btn {
+  background-color: #ff99006b;
+  color: white;
+}
+
+.log-btn:hover {
+  background-color: #ff9800;
+}
+
 .toast {
   position: fixed;
   top: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: solid 1px #ff9800;
+  background-color: #ff9800;
+  border: solid 1px white;
   color: #000000;
   z-index: 5;
 }
@@ -202,7 +228,6 @@ td {
   border: none;
   color: #000000;
 }
-
 
 @media (max-width: 578px) {
   main {

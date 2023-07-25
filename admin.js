@@ -1,25 +1,86 @@
 // Var & const
 const buscador = document.getElementById("buscadorCanciones");
 const token = localStorage.getItem("token");
+const btnGuardar = document.getElementById("btnGuardar");
+let data = [];
 
 // Funciones
 
-// Verificar usuario admin 
+// Verificar usuario admin
 if (!token) {
   window.location.href = "error.html";
-} 
+}
 // else {
 //   localStorage.removeItem("token");
 // }
 
 // Canciones
 
-// Cargar canciones desde JSON
+// Autofocus en los campos de correo electrónico
+const modaledit = document.getElementById("modaledit");
+modaledit.addEventListener("shown.bs.modal", function () {
+  document.getElementById("nuevoNombre").focus();
+});
+
+// Function para cargar canciones desde JSON y almacenar en el localStorage
 async function cargarCanciones() {
   try {
     const response = await fetch("./resources/canciones.json");
-    const data = await response.json();
+    data = await response.json();
 
+    // Guardar datos del JSON en localStorage
+    localStorage.setItem("canciones", JSON.stringify(data));
+
+    // Llamar a la función que genera la tabla de canciones y agrega eventos
+    generarTablaCanciones(data);
+
+    // Agregar evento al boton de guardar
+    btnGuardar.addEventListener("click", () => {
+      // Obtener datos del formulario
+      const modalTitle = document.getElementById("modalEdicionID").textContent;
+      const idCancionEditar = modalTitle.split("#")[1].trim();
+      const nombreCancionEditar = document.getElementById("nuevoNombre").value;
+      const artistaCancionEditar =
+        document.getElementById("nuevoArtista").value;
+
+      // Obtener canciones desde localStorage
+      const canciones = JSON.parse(localStorage.getItem("canciones")) || [];
+
+      // Buscar la posición de la canción en el array de canciones
+      const indexCancionEditar = canciones.findIndex(
+        (cancion) => cancion.id.toString() === idCancionEditar
+      );
+
+      if (indexCancionEditar !== -1) {
+        // Actualizar nombre y artista
+        canciones[indexCancionEditar].nombre = nombreCancionEditar;
+        canciones[indexCancionEditar].artista = artistaCancionEditar;
+
+        // Actualizar JSON
+        localStorage.setItem("canciones", JSON.stringify(canciones));
+
+        // Generar tabla de canciones actualizada
+        generarTablaCanciones(canciones);
+
+      // Cerrar el modal de edición manualmente
+      const modalEdit = document.getElementById("modaledit");
+      modalEdit.style.display = "none";
+      modalEdit.classList.remove("show");
+      modalEdit.setAttribute("aria-hidden", "true");
+      modalEdit.removeAttribute("aria-modal");
+      document.body.classList.remove("modal-open");
+      const modalBackdrop = document.querySelector(".modal-backdrop");
+      modalBackdrop.parentNode.removeChild(modalBackdrop);
+    }
+  });
+  } catch (error) {
+    console.error("Error al cargar archivo JSON:", error);
+  }
+}
+
+// Function para generar la tabla y agregar eventos
+function generarTablaCanciones(data) {
+  try {
     // Menu desplegable y tabla
     const menuDesplegable = document.getElementById("canciones");
     const tablaCanciones = document.querySelector("#tablaCanciones tbody");
@@ -50,23 +111,89 @@ async function cargarCanciones() {
       columnaID.textContent = cancion.id;
       columnaNombre.textContent = cancion.nombre;
       columnaArtista.textContent = cancion.artista;
-      
+
       // Boton para agregar las canciones
       const botonAgregar = document.createElement("button");
       botonAgregar.classList.add("btn", "btn-sm", "bg-orange", "btn-agregar");
       botonAgregar.innerHTML = '<i class="bi bi-plus-lg"></i>';
-      columnaAcciones.appendChild(botonAgregar);
 
       // Boton para editar las canciones
-      const botonEditar = document.createElement("button");
-      botonEditar.classList.add("btn", "btn-sm", "bg-orange", "btn-editar", "ms-2");
-      botonEditar.innerHTML = '<i class="bi bi-pencil"></i>';
-      botonEditar.addEventListener("click", () => {
-        // TO DO
-      });
-      columnaAcciones.appendChild(botonEditar);
-      
+      const btnEditar = document.createElement("button");
+      btnEditar.classList.add(
+        "btn",
+        "btn-sm",
+        "bg-orange",
+        "btn-editar",
+        "ms-2"
+      );
+      btnEditar.innerHTML = '<i class="bi bi-pencil"></i>';
 
+      btnEditar.addEventListener("click", (event) => {
+        // Obtener fila a editar
+        const fila = event.target.closest("tr");
+
+        // Obtener ID de la canción
+        const idCancion = fila.querySelector("td:nth-child(1)").textContent;
+
+        // Buscar datos de la cancion en array
+        const cancionActual = data.find(
+          (cancion) => cancion.id.toString() === idCancion
+        );
+
+        // Verificar si encontro la canción
+        if (cancionActual) {
+          // Actualizar contenido de modal
+          const modalTitle = document.getElementById("modalEdicionID");
+          modalTitle.innerHTML = `Editar Canción ID: # ${cancionActual.id}`;
+
+          // Actualizar los campos del formulario
+          const nombreActual = document.getElementById("nombreActual");
+          const artistaActual = document.getElementById("artistaActual");
+
+          nombreActual.textContent = `Nombre actual: ${cancionActual.nombre}`;
+          artistaActual.textContent = `Artista actual: ${cancionActual.artista}`;
+
+          // Abrir modal de edición
+          const modalEdit = new bootstrap.Modal(
+            document.getElementById("modaledit")
+          );
+          modalEdit.show();
+        }
+      });
+
+      // Boton para eliminar las canciones
+      const btnEliminar = document.createElement("button");
+      btnEliminar.classList.add("btn", "btn-sm", "bg-orange", "btn-eliminar", "ms-2");
+      btnEliminar.innerHTML = '<i class="bi bi-trash"></i>';
+      btnEliminar.addEventListener("click", (event) => {
+        // Obtener fila a eliminar
+        const fila = event.target.closest("tr");
+
+        // Obtener ID de la canción
+        const idCancion = fila.querySelector("td:nth-child(1)").textContent;
+
+        // Buscar datos de la cancion en array
+        const cancionEliminar = data.find(
+          (cancion) => cancion.id.toString() === idCancion
+        );
+
+        // Verificar si encontro la canción
+        if (cancionEliminar) {
+          eliminarCancionDisponible(cancionEliminar);
+        }
+      });
+
+      // Crear div para botones
+      const divBtn = document.createElement("div");
+      divBtn.classList.add("d-flex", "justify-content-center");
+
+      // Agregar botones al div
+      divBtn.appendChild(botonAgregar);
+      divBtn.appendChild(btnEditar);
+      divBtn.appendChild(btnEliminar);
+
+      // Agregar div a la columna
+      columnaAcciones.appendChild(divBtn);
 
       fila.appendChild(columnaID);
       fila.appendChild(columnaNombre);
@@ -74,7 +201,6 @@ async function cargarCanciones() {
       fila.appendChild(columnaAcciones);
       tablaCanciones.appendChild(fila);
     });
-
   } catch (error) {
     console.error("Error al cargar archivo JSON:", error);
   }
@@ -136,7 +262,8 @@ tablaCanciones.addEventListener("click", (event) => {
     };
 
     // Agregar nueva canción a array "cancionesSeleccionadas"
-    const cancionesSeleccionadas = JSON.parse(localStorage.getItem("cancionesSeleccionadas")) || [];
+    const cancionesSeleccionadas =
+      JSON.parse(localStorage.getItem("cancionesSeleccionadas")) || [];
     cancionesSeleccionadas.push(nuevaCancion);
     localStorage.setItem(
       "cancionesSeleccionadas",
@@ -153,7 +280,8 @@ tablaCanciones.addEventListener("click", (event) => {
 
 // Function para generar tabla de canciones seleccionadas
 function generarTablaCancionesSeleccionadas() {
-  const cancionesSeleccionadas = JSON.parse(localStorage.getItem("cancionesSeleccionadas")) || [];
+  const cancionesSeleccionadas =
+    JSON.parse(localStorage.getItem("cancionesSeleccionadas")) || [];
 
   // Limpiar contenido de tabla de canciones seleccionadas
   bodySeleccion.innerHTML = "";
@@ -161,7 +289,9 @@ function generarTablaCancionesSeleccionadas() {
   // Generar filas para cada canción seleccionada
   cancionesSeleccionadas.forEach((cancion) => {
     // Verificar si la canción ya está en la tabla
-    const cancionEnTabla = bodySeleccion.querySelector(`tr[data-id="${cancion.id}"]`);
+    const cancionEnTabla = bodySeleccion.querySelector(
+      `tr[data-id="${cancion.id}"]`
+    );
 
     if (!cancionEnTabla) {
       const fila = document.createElement("tr");
@@ -170,7 +300,7 @@ function generarTablaCancionesSeleccionadas() {
       const columnaID = document.createElement("td");
       columnaID.textContent = cancion.id;
       fila.appendChild(columnaID);
-      
+
       const columnaNombre = document.createElement("td");
       columnaNombre.textContent = cancion.nombre;
       fila.appendChild(columnaNombre);
@@ -178,7 +308,6 @@ function generarTablaCancionesSeleccionadas() {
       const columnaArtista = document.createElement("td");
       columnaArtista.textContent = cancion.artista;
       fila.appendChild(columnaArtista);
-      
 
       const columnaAcciones = document.createElement("td");
       const botonEliminar = document.createElement("button");
@@ -193,19 +322,46 @@ function generarTablaCancionesSeleccionadas() {
 
       // Agregar fila a la tabla de canciones seleccionadas
       bodySeleccion.appendChild(fila);
-
     }
   });
 }
 
+// Function eliminar de canciones disponibles
+function eliminarCancionDisponible(cancion) {
+  const canciones = JSON.parse(localStorage.getItem("canciones")) || [];
+
+  // Filtrar las canciones y eliminar la seleccionada
+  const cancionesFiltradas = canciones.filter(
+    (c) => c.id.toString() !== cancion.id.toString()
+  );
+
+  // Actualizar el JSON de canciones
+  localStorage.setItem("canciones", JSON.stringify(cancionesFiltradas));
+
+  // Generar tabla de canciones disponibles actualizada
+  generarTablaCanciones(cancionesFiltradas);
+
+  // Eliminar la canción de la tabla de canciones seleccionadas (si estaba seleccionada)
+  eliminarCancionSeleccionada(cancion);
+
+  // Mostrar toast de éxito
+  mostrarToast(cancion.nombre, "eliminarCancion");
+}
+
 // Function para eliminar una canción
 function eliminarCancionSeleccionada(cancion) {
-  const cancionesSeleccionadas = JSON.parse(localStorage.getItem("cancionesSeleccionadas")) || [];
-  const cancionesActualizadas = cancionesSeleccionadas.filter((c) => c.id !== cancion.id);
-  localStorage.setItem("cancionesSeleccionadas", JSON.stringify(cancionesActualizadas));
+  const cancionesSeleccionadas =
+    JSON.parse(localStorage.getItem("cancionesSeleccionadas")) || [];
+  const cancionesActualizadas = cancionesSeleccionadas.filter(
+    (c) => c.id !== cancion.id
+  );
+  localStorage.setItem(
+    "cancionesSeleccionadas",
+    JSON.stringify(cancionesActualizadas)
+  );
   generarTablaCancionesSeleccionadas();
 
-  mostrarToast(cancion.nombre, "eliminarCancion")
+  mostrarToast(cancion.nombre, "eliminarCancion");
 }
 
 // Usuarios
@@ -234,6 +390,11 @@ function generarTablaUsuarios() {
     const fila = document.createElement("tr");
 
     // Columna Nombre
+    const columnaID = document.createElement("td");
+    columnaID.textContent = "ID";
+    fila.appendChild(columnaID);
+
+    // Columna Nombre
     const columnaNombre = document.createElement("td");
     columnaNombre.textContent = usuario.nombre;
     fila.appendChild(columnaNombre);
@@ -256,7 +417,6 @@ function generarTablaUsuarios() {
 
     // Agregar fila a la tabla
     tablaUsuarios.appendChild(fila);
-
   });
 }
 // Eliminar usuario de la lista y actualizar tabla
@@ -268,7 +428,7 @@ function eliminarUsuario(usuario) {
   guardarUsuarios(usuariosActualizados);
   generarTablaUsuarios();
 
-  mostrarToast(usuario.nombre, "eliminarUser")
+  mostrarToast(usuario.nombre, "eliminarUser");
 }
 
 // Toast
@@ -295,5 +455,6 @@ generarTablaCancionesSeleccionadas();
 
 // Evento para cargar tabla de usuarios
 document.addEventListener("DOMContentLoaded", () => {
-  generarTablaUsuarios(), cargarCanciones();
+  generarTablaUsuarios();
+  cargarCanciones();
 });

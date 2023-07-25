@@ -137,6 +137,7 @@ section {
 .table-container {
   max-height: 300px;
   overflow-y: auto;
+  max-width: 1200px;
 }
 
 th {
@@ -201,7 +202,7 @@ table td:nth-child(1) {
   background-color: #ff9800;
 }
 
-/* --------------------cambios de index-------------------- */
+/* Cambios de index */
 .card-disc {
   border: 1px solid #ff990000;
   max-width: 300px;
@@ -232,7 +233,7 @@ table td:nth-child(1) {
   text-align: center;
 }
 
-/* -------------------- Login -------------------- */
+/* Login */
 
 .modal {
   background-color: rgba(28, 28, 28, 0.342);
@@ -251,12 +252,12 @@ table td:nth-child(1) {
   background-color: #ff9800;
 }
 
-/* -------------------- Toast -------------------- */
+/* Toast */
 .toast {
   position: fixed;
   top: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: solid 1px #ff9800;
+  background-color: #ff9800);
+  border: solid 1px white;
   color: #000000;
   z-index: 5;
 }
@@ -268,7 +269,7 @@ table td:nth-child(1) {
 }
 
 
-/* -------------------- footer -------------------- */
+/* Footer */
 #pie {
   background-color: rgba(28, 28, 28, 0.342);
   width: 100%;
@@ -325,7 +326,7 @@ table td:nth-child(1) {
   color: #ffa600;
 }
 
-/* -------------------- media querys -------------------- */
+/* Media querys */
 
 @media (max-width: 576px) {
   main {

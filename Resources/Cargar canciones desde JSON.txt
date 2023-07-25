@@ -1,0 +1,144 @@
+// Cargar canciones desde JSON
+// async function cargarCanciones() {
+//   try {
+//     const response = await fetch("./resources/canciones.json");
+//     const data = await response.json();
+
+//     // Guardar datos del JSON en localStorage
+//     localStorage.setItem("canciones", JSON.stringify(data));
+
+//     // Menu desplegable y tabla
+//     const menuDesplegable = document.getElementById("canciones");
+//     const tablaCanciones = document.querySelector("#tablaCanciones tbody");
+
+//     // Limpiar menu desplegable
+//     menuDesplegable.innerHTML = "";
+//     menuDesplegable.appendChild(document.createElement("option"));
+
+//     // Agregar canciones al menu
+//     data.forEach((cancion) => {
+//       const option = document.createElement("option");
+//       option.value = cancion.id;
+//       option.textContent = `${cancion.nombre} - ${cancion.artista}`;
+//       menuDesplegable.appendChild(option);
+//     });
+
+//     // Limpiar tabla
+//     tablaCanciones.innerHTML = "";
+
+//     // Agregar filas a la tabla
+//     data.forEach((cancion) => {
+//       const fila = document.createElement("tr");
+//       const columnaID = document.createElement("td");
+//       const columnaNombre = document.createElement("td");
+//       const columnaArtista = document.createElement("td");
+//       const columnaAcciones = document.createElement("td");
+
+//       columnaID.textContent = cancion.id;
+//       columnaNombre.textContent = cancion.nombre;
+//       columnaArtista.textContent = cancion.artista;
+
+//       // Boton para agregar las canciones
+//       const botonAgregar = document.createElement("button");
+//       botonAgregar.classList.add("btn", "btn-sm", "bg-orange", "btn-agregar");
+//       botonAgregar.innerHTML = '<i class="bi bi-plus-lg"></i>';
+//       columnaAcciones.appendChild(botonAgregar);
+
+//       // Boton para editar las canciones
+//       const btnEditar = document.createElement("button");
+//       btnEditar.classList.add(
+//         "btn",
+//         "btn-sm",
+//         "bg-orange",
+//         "btn-editar",
+//         "ms-2"
+//       );
+//       btnEditar.innerHTML = '<i class="bi bi-pencil"></i>';
+
+//       btnEditar.addEventListener("click", (event) => {
+//         // Obtener fila a editar
+//         const fila = event.target.closest("tr");
+
+//         // Obtener ID de la canción
+//         const idCancion = fila.querySelector("td:nth-child(1)").textContent;
+
+//         // Buscar datos de la cancion en array
+//         const cancionActual = data.find(
+//           (cancion) => cancion.id.toString() === idCancion
+//         );
+
+//         // Verificar si encontro la canción
+//         if (cancionActual) {
+//           // Actualizar contenido de modal
+//           const modalTitle = document.getElementById("modalEdicionID");
+//           modalTitle.innerHTML = `Editar Canción ID: # ${cancionActual.id}`;
+
+//           // Actualizar los campos del formulario
+//           const nombreActual = document.getElementById("nombreActual");
+//           const artistaActual = document.getElementById("artistaActual");
+
+//           nombreActual.textContent = `Nombre actual: ${cancionActual.nombre}`;
+//           artistaActual.textContent = `Artista actual: ${cancionActual.artista}`;
+
+//           // Abrir modal de edición
+//           const modalEdit = new bootstrap.Modal(
+//             document.getElementById("modaledit")
+//           );
+//           modalEdit.show();
+//         }
+//       });
+
+//       // Agregar evento al boton de guardar
+//       btnGuardar.addEventListener("click", () => {
+//         // Obtener datos del formulario
+//         const idCancionEditar = document.getElementById("modalEdicionID").value;
+//         const nombreCancionEditar =
+//           document.getElementById("nuevoNombre").value;
+//         const artistaCancionEditar =
+//           document.getElementById("nuevoArtista").value;
+
+//         // Buscar cancion en array
+//         const cancionEditar = data.find(
+//           (cancion) => cancion.id.toString() === idCancionEditar
+//         );
+
+//         if (cancionEditar) {
+//           // Actualizar nombre y artista
+//           cancionEditar.nombre = nombreCancionEditar;
+//           cancionEditar.artista = artistaCancionEditar;
+
+//           // Actualizar JSON
+//           actulizarJSON(data);
+
+//           // Actualizar la tabla de canciones
+//           cargarCanciones();
+
+//           // Cerrar el modal de edición
+//           const modalEdit = new bootstrap.Modal(
+//             document.getElementById("modaledit")
+//           );
+//           modalEdit.hide();
+//         }
+//       });
+
+//       // Crear div para botones
+//       const divBtn = document.createElement("div");
+//       divBtn.classList.add("d-flex", "justify-content-center");
+
+//       // Agregar botones al div
+//       divBtn.appendChild(botonAgregar);
+//       divBtn.appendChild(btnEditar);
+
+//       // Agregar div a la columna
+//       columnaAcciones.appendChild(divBtn);
+
+//       fila.appendChild(columnaID);
+//       fila.appendChild(columnaNombre);
+//       fila.appendChild(columnaArtista);
+//       fila.appendChild(columnaAcciones);
+//       tablaCanciones.appendChild(fila);
+//     });
+//   } catch (error) {
+//     console.error("Error al cargar archivo JSON:", error);
+//   }
+// }
