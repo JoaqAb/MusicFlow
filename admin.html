@@ -133,39 +133,64 @@
             <select name="canciones" id="canciones"></select>
 
             <!-- Tabla de canciones disponibles -->
-            <div class="col-6 d-flex align-items-center">
-              <h2 class="text-white m-0">Canciones disponibles</h2>
-            </div>
-            <div class="table-container mt-3">
-              <table id="tablaCanciones" class="custom-table">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Artista</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody id="bodyCanciones"></tbody>
-              </table>
+            <div>
+              <div class="col-6 d-flex align-items-center">
+                <h2 class="text-white m-0">Canciones disponibles</h2>
+              </div>
+              <div class="d-flex my-2 gap-3">
+                <div>
+                  <button
+                    type="button"
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalAgregarCancion"
+                  >
+                    Agregar Canción
+                  </button>
+                </div>
+                <div>
+                  <button
+                    type="button"
+                    class="btn"
+                    id="btnAgregarPredeterminado"
+                  >
+                    Agregar Predeterminado
+                  </button>
+                </div>
+              </div>
+              <div class="table-container mt-3">
+                <table id="tablaCanciones" class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Artista</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="bodyCanciones"></tbody>
+                </table>
+              </div>
             </div>
 
             <!-- Tabla de canciones seleccionadas -->
-            <div class="col-6 d-flex align-items-center mt-5">
-              <h2 class="text-white m-0">Canciones seleccionadas</h2>
-            </div>
-            <div class="table-container mt-3">
-              <table id="tablaSeleccion" class="custom-table">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Artista</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody id="bodySeleccion"></tbody>
-              </table>
+            <div>
+              <div class="col-6 d-flex align-items-center mt-5">
+                <h2 class="text-white m-0">Canciones seleccionadas</h2>
+              </div>
+              <div class="table-container mt-3">
+                <table id="tablaSeleccion" class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Título</th>
+                      <th>Artista</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="bodySeleccion"></tbody>
+                </table>
+              </div>
             </div>
           </div>
 
@@ -192,6 +217,61 @@
           </div>
         </div>
       </main>
+
+      <!-- Modal agregar canción -->
+      <div
+        class="modal fade"
+        id="modalAgregarCancion"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Agregar Canción
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="formAgregarTitulo">
+                <div class="mb-3">
+                  <label for="titulo" class="form-label">Nombre:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nuevoNombre"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="artista" class="form-label">Artista:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nuevoArtista"
+                    required
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-bs-dismiss="modal">
+                Cancelar
+              </button>
+              <button type="button" class="btn" id="btnGuardarCancion">
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Modal edición -->
       <div
@@ -253,9 +333,7 @@
               <button type="button" class="btn" data-bs-dismiss="modal">
                 Cancelar
               </button>
-              <button type="submit" class="btn" id="btnGuardar">
-                Guardar
-              </button>
+              <button type="submit" class="btn" id="btnGuardar">Guardar</button>
             </div>
           </div>
         </div>

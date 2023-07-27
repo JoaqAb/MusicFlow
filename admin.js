@@ -2,7 +2,20 @@
 const buscador = document.getElementById("buscadorCanciones");
 const token = localStorage.getItem("token");
 const btnGuardar = document.getElementById("btnGuardar");
+const btnAgregarCancion = document.getElementById("btnAgregarCancion");
+const btnGuardarCancion = document.getElementById("btnGuardarCancion");
+const btnAgregarPredeterminado = document.getElementById(
+  "btnAgregarPredeterminado"
+);
 let data = [];
+
+// Obtener tabla de canciones disponibles
+const tablaCanciones = document.getElementById("tablaCanciones");
+const bodyCanciones = document.getElementById("bodyCanciones");
+
+// Obtener tabla de canciones seleccionadas
+const tablaSeleccion = document.getElementById("tablaSeleccion");
+const bodySeleccion = document.getElementById("bodySeleccion");
 
 // Funciones
 
@@ -16,7 +29,7 @@ if (!token) {
 
 // Canciones
 
-// Autofocus en los campos de correo electrónico
+// Autofocus en edit
 const modaledit = document.getElementById("modaledit");
 modaledit.addEventListener("shown.bs.modal", function () {
   document.getElementById("nuevoNombre").focus();
@@ -29,12 +42,31 @@ async function cargarCanciones() {
     data = await response.json();
 
     // Guardar datos del JSON en localStorage
-    localStorage.setItem("canciones", JSON.stringify(data));
+    if (!localStorage.getItem("canciones")) {
+      localStorage.setItem("canciones", JSON.stringify(data));
+    }
+
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!! CARGAR PAGINA CON TABLA VACIA Y AGREGAR CON BOTON
+
+    // Agregar evento al botón Agregar Predeterminado
+    btnAgregarPredeterminado.addEventListener("click", async () => {
+      try {
+        // Llamamos a la función para cargar las canciones predeterminadas
+        await cargarCancionesPredeterminadas();
+
+        // Generamos tabla de canciones actualizada con las canciones fusionadas
+        generarTablaCanciones(JSON.parse(localStorage.getItem("canciones")));
+      } catch (error) {
+        console.error("Error al cargar canciones predeterminadas:", error);
+      }
+    });
+
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!! CARGAR PAGINA CON TABLA PREDETERMINADA
 
     // Llamar a la función que genera la tabla de canciones y agrega eventos
-    generarTablaCanciones(data);
+    // generarTablaCanciones(data);
 
-    // Agregar evento al boton de guardar
+    // Agregar evento al botón de guardar
     btnGuardar.addEventListener("click", () => {
       // Obtener datos del formulario
       const modalTitle = document.getElementById("modalEdicionID").textContent;
@@ -62,20 +94,40 @@ async function cargarCanciones() {
         // Generar tabla de canciones actualizada
         generarTablaCanciones(canciones);
 
-      // Cerrar el modal de edición manualmente
-      const modalEdit = document.getElementById("modaledit");
-      modalEdit.style.display = "none";
-      modalEdit.classList.remove("show");
-      modalEdit.setAttribute("aria-hidden", "true");
-      modalEdit.removeAttribute("aria-modal");
-      document.body.classList.remove("modal-open");
-      const modalBackdrop = document.querySelector(".modal-backdrop");
-      modalBackdrop.parentNode.removeChild(modalBackdrop);
-    }
-  });
+        // Cerrar el modal de edición manualmente
+        const modalEdit = document.getElementById("modaledit");
+        modalEdit.style.display = "none";
+        modalEdit.classList.remove("show");
+        modalEdit.setAttribute("aria-hidden", "true");
+        modalEdit.removeAttribute("aria-modal");
+        document.body.classList.remove("modal-open");
+        const modalBackdrop = document.querySelector(".modal-backdrop");
+        modalBackdrop.parentNode.removeChild(modalBackdrop);
+      }
+    });
   } catch (error) {
     console.error("Error al cargar archivo JSON:", error);
   }
+}
+
+// Function para cargar predeterminado
+async function cargarCancionesPredeterminadas() {
+  const predResponse = await fetch("./resources/canciones.json");
+  const predData = await predResponse.json();
+
+  // Obtener canciones actuales desde localStorage
+  const canciones = JSON.parse(localStorage.getItem("canciones")) || [];
+
+  // Filtramos las canciones predeterminadas para evitar duplicados
+  const cancionesNuevas = predData.filter((cancionPred) => {
+    return !canciones.some((cancion) => cancion.id === cancionPred.id);
+  });
+
+  // Fusionamos las canciones con las actuales
+  const cancionesActualizadas = [...canciones, ...cancionesNuevas];
+
+  // Actualizar JSON en localStorage
+  localStorage.setItem("canciones", JSON.stringify(cancionesActualizadas));
 }
 
 // Function para generar la tabla y agregar eventos
@@ -163,7 +215,13 @@ function generarTablaCanciones(data) {
 
       // Boton para eliminar las canciones
       const btnEliminar = document.createElement("button");
-      btnEliminar.classList.add("btn", "btn-sm", "bg-orange", "btn-eliminar", "ms-2");
+      btnEliminar.classList.add(
+        "btn",
+        "btn-sm",
+        "bg-orange",
+        "btn-eliminar",
+        "ms-2"
+      );
       btnEliminar.innerHTML = '<i class="bi bi-trash"></i>';
       btnEliminar.addEventListener("click", (event) => {
         // Obtener fila a eliminar
@@ -234,14 +292,6 @@ buscador.addEventListener("input", () => {
   });
 });
 
-// Obtener tabla de canciones disponibles
-const tablaCanciones = document.getElementById("tablaCanciones");
-const bodyCanciones = document.getElementById("bodyCanciones");
-
-// Obtener tabla de canciones seleccionadas
-const tablaSeleccion = document.getElementById("tablaSeleccion");
-const bodySeleccion = document.getElementById("bodySeleccion");
-
 // Agregar evento de escucha a canciones disponibles
 tablaCanciones.addEventListener("click", (event) => {
   // Verificar click en boton agregar
@@ -277,6 +327,7 @@ tablaCanciones.addEventListener("click", (event) => {
     mostrarToast(nuevaCancion.nombre, "agregarCancion");
   }
 });
+
 
 // Function para generar tabla de canciones seleccionadas
 function generarTablaCancionesSeleccionadas() {
