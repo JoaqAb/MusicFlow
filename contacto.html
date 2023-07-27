@@ -31,19 +31,13 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css" />
+    <title>Contacto</title>
   </head>
 
   <body>
     <div
       class="main-box container-fluid p-0 d-flex flex-column justify-content-start h-100"
     >
-      <!-- Banner -->
-      <div class="bg-image align-items-center">
-        <div class="justify-content-center container-fluid w-100 d-flex">
-          <h2 class="txt titulo fs-1"><b>Quiénes somos?</b></h2>
-        </div>
-      </div>
-
 <!-- Navbar -->
 <nav class="navbar w-100 position-fixed top-0 left-0 z-2">
   <div
@@ -117,108 +111,38 @@
     </div>
   </div>
 </nav>
-
-      <div class="container justify-content-center m-5">
-        <div class="row justify-content-center">
-          <div class="col-md-8 d-flex">
-            <p class="lead">
-              Nuestra plataforma es el resultado de la pasión compartida por la
-              música y la tecnología. Nos enorgullece ofrecer a nuestros
-              usuarios una experiencia musical, brindando acceso a una amplia
-              biblioteca de canciones de todos los géneros y épocas. Únete a
-              nosotros en este viaje musical y descubre un nuevo mundo de
-              emociones sonoras con MusicFlow!
-            </p>
-            <div class="imagen-padding col-md-4 ms-4 d-none d-md-block">
-              <img
-                src="https://thumbs.dreamstime.com/b/alegre-hombre-afroamericano-escuchando-m%C3%BAsica-usando-aud%C3%ADfonos-inal%C3%A1mbricos-y-relajante-relajado-joven-barbudo-blanco-con-ojos-270538470.jpg"
-                width="400"
-                height="300"
-                class="rounded-circle img-fluid shadow"
-              />
-            </div>
-          </div>
+    <!-- Banner -->
+      <div class="bg-image align-items-center">
+        <div class="justify-content-center container-fluid w-100 d-flex">
+          <h2 class="txt titulo fs-1"><b>Contáctenos</b></h2>
         </div>
       </div>
-      <main class="container-fluid mt-4">
-        <br />
-        <div class="row d-flex justify-content-around">
-          <div class="col-lg-4 d-flex flex-column align-items-center">
-            <img
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              src="./Resources/caro.jpg"
-            />
-
-            <h2 class="fw-normal text-center txt">Carolina Fernandez</h2>
-            <p class="text-center">
-              La Scrum Master trabaja en estrecha colaboración con el equipo
-              Scrum para facilitar y mejorar su rendimiento.
-            </p>
-            <p class="text-center">
-              <a class="btn-nosotros" href="#">Desarrollador Web</a>
-            </p>
-          </div>
-          <div class="col-lg-4 d-flex flex-column align-items-center">
-            <img
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              src="./Resources/Diego.jpg"
-            />
-
-            <h2 class="fw-normal text-center txt">Diego Diaz</h2>
-            <p class="text-center">
-              Se especializa en la creación y desarrollo de sitios web y
-              aplicaciones web utilizando diversas técnicas para alcanzar sus
-              objetivos.
-            </p>
-            <p class="text-center">
-              <a class="btn-nosotros" href="#">Desarrollador web</a>
-            </p>
-          </div>
+    <main class="contact">
+        <div class="container-fluid">
+            <div class="container-contact">
+                <div class="contact-image">
+                    <img src="./Resources/contact.png" alt="Imagen de ejemplo" class="img-contact">
+                </div>
+                <div class="contact-campos">
+                    <form class="campos" action="https://formsubmit.co/danirui230390@gmail.com" method="post">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Lilian Plastibol" maxlength="20" minlength="6" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="user@ejemplo.com" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" name="message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <div class="row d-flex justify-content-around">
-          <div class="col-lg-4 d-flex flex-column align-items-center">
-            <img
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              src="./Resources/joaquinabuin.png"
-            />
-
-            <h2 class="fw-normal text-center txt">Joaquin Abuin</h2>
-            <p class="text-center">
-              Su objetivo es crear soluciones web funcionales, atractivas y de
-              calidad para los usuarios.
-            </p>
-            <p class="text-center">
-              <a class="btn-nosotros" href="#">Desarrollador Web</a>
-            </p>
-          </div>
-
-          <div class="col-lg-4 d-flex flex-column align-items-center">
-            <img
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              src="./Resources/DanielRuiz.png"
-            />
-
-            <h2 class="fw-normal text-center txt">Gustavo Ruiz</h2>
-            <p class="text-center">
-              Trabaja para convertir ideas y requisitos en realidad digital,
-              utilizando su experiencia en programación para desarrollar
-              soluciones web efectivas.
-            </p>
-            <p class="text-center">
-              <a class="btn-nosotros" href="#">Desarrollador Web</a>
-            </p>
-          </div>
-        </div>
-      </main>
+    </main>
 
       <!-- Modal login -->
       <div>
@@ -388,6 +312,7 @@
         </div>
       </div>
 
+
       <!-- footer -->
       <footer id="pie">
         <div class="footerContent">
@@ -434,6 +359,7 @@
             ></a>
           </div>
         </div>
+
         <p class="dev">- Todos los derechos reservados a quién corresponda -</p>
       </footer>
     </div>
