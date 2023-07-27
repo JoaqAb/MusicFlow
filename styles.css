@@ -277,7 +277,26 @@ table td:nth-child(1) {
 }
 /* -------------------- detalle -------------------- */
 .container{
-  margin-top: 80px;
+  margin-top: 100px;
+  /* border: 1px solid yellowgreen; */
+}
+.container .detalle{
+  /* border: 1px solid #00acee; */
+  margin: 0 50px 0 50px;
+}
+.container .detalle-img{
+  /* border: 1px solid rgb(205, 50, 205); */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container .card-img-top{
+  width: 70%;
+}
+.container .detalle-content{
+  padding: 20px;
+  /* border: 1px solid rgb(50, 169, 205); */
+  
 }
 /* -------------------- contact -------------------- */
 .contact .container-fluid .container-contact .contact-campos button{
