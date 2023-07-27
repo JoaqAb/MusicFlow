@@ -137,7 +137,6 @@ section {
 .table-container {
   max-height: 300px;
   overflow-y: auto;
-  max-width: 1200px;
 }
 
 th {
@@ -202,7 +201,7 @@ table td:nth-child(1) {
   background-color: #ff9800;
 }
 
-/* Cambios de index */
+/* --------------------cambios de index-------------------- */
 .card-disc {
   border: 1px solid #ff990000;
   max-width: 300px;
@@ -232,8 +231,17 @@ table td:nth-child(1) {
 .secc-descubre .card-body{
   text-align: center;
 }
-
-/* Login */
+*/
+.dropdown-menu button{
+  background-color: #ffa600;
+  border: none;
+  font-weight: 500;
+}
+.dropdown-menu button:hover{
+  background-color: #ffa600;
+  color: #000000;
+}
+/* -------------------- Login -------------------- */
 
 .modal {
   background-color: rgba(28, 28, 28, 0.342);
@@ -252,12 +260,12 @@ table td:nth-child(1) {
   background-color: #ff9800;
 }
 
-/* Toast */
+/* -------------------- Toast -------------------- */
 .toast {
   position: fixed;
   top: 20px;
-  background-color: #ff9800);
-  border: solid 1px white;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: solid 1px #ff9800;
   color: #000000;
   z-index: 5;
 }
@@ -267,9 +275,42 @@ table td:nth-child(1) {
   border: none;
   color: #000000;
 }
+/* -------------------- detalle -------------------- */
+.container{
+  margin-top: 100px;
+  /* border: 1px solid yellowgreen; */
+}
+.container .detalle{
+  /* border: 1px solid #00acee; */
+  margin: 0 50px 0 50px;
+}
+.container .detalle-img{
+  /* border: 1px solid rgb(205, 50, 205); */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container .card-img-top{
+  width: 70%;
+}
+.container .detalle-content{
+  padding: 20px;
+  /* border: 1px solid rgb(50, 169, 205); */
+  
+}
+/* -------------------- contact -------------------- */
+.contact .container-fluid .container-contact .contact-campos button{
+  background-color: #ffa600;
+  border: none;
+  font-weight: 500;
+}
+.contact .container-fluid .container-contact .contact-campos button:hover{
+  background-color: #ffa600;
+  color: #000000;
+}
 
 
-/* Footer */
+/* -------------------- footer -------------------- */
 #pie {
   background-color: rgba(28, 28, 28, 0.342);
   width: 100%;
@@ -326,7 +367,7 @@ table td:nth-child(1) {
   color: #ffa600;
 }
 
-/* Media querys */
+/* -------------------- media querys -------------------- */
 
 @media (max-width: 576px) {
   main {
@@ -356,10 +397,55 @@ table td:nth-child(1) {
   .table-container {
     max-height: 200px;
   }
-}
 
+/* contact */
+.contact .container-fluid .container-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact .container-fluid .container-contact .contact-campos{
+  width: 90%;
+  margin-top: 20px;
+}
+.contact .container-fluid .container-contact .contact-image{
+  width: 50%;
+}
+.contact .container-fluid .container-contact .contact-image .img-contact{
+  width: 100%;
+}
+}
+@media (min-width: 577px){
+  /* -------------------- contact -------------------- */
+  .contact .container-fluid .container-contact{
+    display: flex;
+    padding: 10px;
+  }
+  .contact .container-fluid .container-contact .contact-campos{
+    width: 90%;
+    margin-top: 20px;
+  }
+  .contact .container-fluid .container-contact .contact-image{
+    width: 50%;
+  }
+  .contact .container-fluid .container-contact .contact-image .img-contact{
+    width: 100%;
+    margin-top: 90px;
+   }
+}
 @media (max-width: 650px) {
   .card-title {
     font-size: 10pt;
   }
+}
+@media (min-width: 1000px){
+    /* -------------------- contact -------------------- */
+    .contact .container-fluid .container-contact .contact-campos{
+      padding-right: 120px;
+    }
+    .contact .container-fluid .container-contact .contact-image .img-contact{
+      margin-top: 10px;
+   }
+
 }

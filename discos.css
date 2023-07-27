@@ -1,46 +1,34 @@
-.link-nav a{
-    text-decoration: none;
-    color: white;
-  }
 .disc{
     margin-top: 80px;
 }
-.disc-info{
+.disc .disc-info .img-disc{
     display: flex;
-    margin-bottom: 20px;
+    justify-content: center;
 }
-.disc-info .img img{
-    border-radius: 2% 
-}
-.disc-info .descrip {
-    padding: 35px;
-    font-size: 14px;
-    color: rgb(176, 175, 175);
-}
-.disc-info .descrip h2{
-    color: white;
-}
-.disc .lista .lista-indic{
-    display: flex;
-    justify-content: end;
+.disc .disc-info .descrip{
+    margin: 20px;
 }
 .disc .lista .tracks{
     display: flex;
     justify-content: space-between;
-}
-.disc .lista .tracks .title{
-    color: white;
+    margin: 0 10px 0 10px;
 }
 .disc .lista .tracks span{
-    color: rgb(176, 175, 175);
+    color: rgba(176, 175, 175, 0.793);
 }
-.disc .lista .bi-play-fill:hover{
-    color: #ff9900cc;
-    cursor: pointer;
-}
-.disc .lista .bi-list-check:hover{
-    color: #ff9900cc;
-    cursor: pointer;
+
+/* -------------------- media querys -------------------- */
+
+@media (min-width: 780px) {
+    .disc .disc-info{
+       display: flex;
+    }
+    .disc .disc-info .img-disc{
+        display: flex;
+        margin: 30px;
+        width: 50%;
+        height: 50%;
+    }
 }
 
 /* --------------------footer-------------------- */
@@ -65,11 +53,9 @@
         font-weight: 400;
         font-size: 18px;
       }
-  
   #pie .footerContent svg {
         margin: 1rem;
        }
-  
   #pie .footerContent svg:hover {
           cursor: pointer; }
   
