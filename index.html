@@ -25,10 +25,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <script
       src="https://kit.fontawesome.com/d8ca64c014.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+
     <title>MusicFlow</title>
   </head>
 
@@ -52,7 +56,9 @@
                 width="30"
                 class="d-inline-block align-text-top"
               />
-              <span class="text-white d-none d-md-block m-flow"> MusicFlow </span>
+              <span class="text-white d-none d-md-block m-flow">
+                MusicFlow
+              </span>
             </a>
           </div>
 
@@ -104,9 +110,16 @@
 
               <div class="dropdown-menu">
                 <form class="d-flex px-2" role="search">
-                  <input class="form-control me-2" type="text" id="inputBusqueda" placeholder="Ingrese su búsqueda"/>
-                  <button id="btnBuscar" class="btn btn-primary" type="submit">Buscar</button>
-                </form>             
+                  <input
+                    class="form-control me-2"
+                    type="text"
+                    id="inputBusqueda"
+                    placeholder="Ingrese su búsqueda"
+                  />
+                  <button id="btnBuscar" class="btn btn-primary" type="submit">
+                    Buscar
+                  </button>
+                </form>
               </div>
             </div>
           </div>
@@ -117,7 +130,7 @@
               data-bs-toggle="modal"
               data-bs-target="#modallogin"
             >
-            <i class="bi bi-person-circle"></i>
+              <i class="bi bi-person-circle"></i>
             </a>
           </div>
         </div>
@@ -190,10 +203,10 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">
+                          <h5 class="card-title">
                             Sueños (Un Viaje En el Tiempo)
                           </h5>
-                          <p class="card-title ">Ciro y Los Persas</p>
+                          <p class="card-title">Ciro y Los Persas</p>
                         </div>
                       </a>
                     </div>
@@ -212,10 +225,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Versiones</h5>
-                          <p class="card-title ">
-                            Las Pastillas del Abuelo
-                          </p>
+                          <h5 class="card-title">Versiones</h5>
+                          <p class="card-title">Las Pastillas del Abuelo</p>
                         </div>
                       </a>
                     </div>
@@ -234,8 +245,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Fuerza Natural</h5>
-                          <p class="card-title ">Gustavo Cerati</p>
+                          <h5 class="card-title">Fuerza Natural</h5>
+                          <p class="card-title">Gustavo Cerati</p>
                         </div>
                       </a>
                     </div>
@@ -254,8 +265,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Especial</h5>
-                          <p class="card-title ">Viejas Locas</p>
+                          <h5 class="card-title">Especial</h5>
+                          <p class="card-title">Viejas Locas</p>
                         </div>
                       </a>
                     </div>
@@ -282,10 +293,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">
-                            Abbey Road
-                          </h5>
-                          <p class="card-title ">The Beatles</p>
+                          <h5 class="card-title">Abbey Road</h5>
+                          <p class="card-title">The Beatles</p>
                         </div>
                       </a>
                     </div>
@@ -304,10 +313,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Nevermind</h5>
-                          <p class="card-title ">
-                            Nirvana
-                          </p>
+                          <h5 class="card-title">Nevermind</h5>
+                          <p class="card-title">Nirvana</p>
                         </div>
                       </a>
                     </div>
@@ -326,8 +333,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">American Idiot</h5>
-                          <p class="card-title ">Green Day</p>
+                          <h5 class="card-title">American Idiot</h5>
+                          <p class="card-title">Green Day</p>
                         </div>
                       </a>
                     </div>
@@ -346,8 +353,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Random Access Memories</h5>
-                          <p class="card-title ">Daft Punk</p>
+                          <h5 class="card-title">Random Access Memories</h5>
+                          <p class="card-title">Daft Punk</p>
                         </div>
                       </a>
                     </div>
@@ -374,10 +381,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">
-                            Graduation
-                          </h5>
-                          <p class="card-title ">Kanye West</p>
+                          <h5 class="card-title">Graduation</h5>
+                          <p class="card-title">Kanye West</p>
                         </div>
                       </a>
                     </div>
@@ -396,10 +401,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Yes</h5>
-                          <p class="card-title ">
-                            Pet Shop Boys
-                          </p>
+                          <h5 class="card-title">Yes</h5>
+                          <p class="card-title">Pet Shop Boys</p>
                         </div>
                       </a>
                     </div>
@@ -418,8 +421,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Como Animales</h5>
-                          <p class="card-title ">Guasones</p>
+                          <h5 class="card-title">Como Animales</h5>
+                          <p class="card-title">Guasones</p>
                         </div>
                       </a>
                     </div>
@@ -438,8 +441,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">The New Abnormal</h5>
-                          <p class="card-title ">The Strokes</p>
+                          <h5 class="card-title">The New Abnormal</h5>
+                          <p class="card-title">The Strokes</p>
                         </div>
                       </a>
                     </div>
@@ -464,13 +467,11 @@
                   <th>Top</th>
                   <th>Nombre</th>
                   <th>Artista</th>
+                  <th></th>
                 </tr>
               </thead>
-              <tbody id="tablaPlaylist">
-                
-              </tbody>
-            </table>            
-            
+              <tbody id="tablaPlaylist"></tbody>
+            </table>
           </div>
           <!-- Body section con carousel -->
         </section>
@@ -503,8 +504,8 @@
                       </div>
                     </div>
                     <div class="card-body mt-2 px-0 bg-black text-center">
-                      <h5 class="card-title ">Hola Precioso</h5>
-                      <p class="card-title ">El Kuelgue</p>
+                      <h5 class="card-title">Hola Precioso</h5>
+                      <p class="card-title">El Kuelgue</p>
                     </div>
                   </a>
                 </div>
@@ -524,8 +525,8 @@
                       </div>
                     </div>
                     <div class="card-body mt-2 px-0 bg-black text-center">
-                      <h5 class="card-title ">EADDA9223</h5>
-                      <p class="card-title ">Fito Paez</p>
+                      <h5 class="card-title">EADDA9223</h5>
+                      <p class="card-title">Fito Paez</p>
                     </div>
                   </a>
                 </div>
@@ -545,10 +546,8 @@
                       </div>
                     </div>
                     <div class="card-body mt-2 px-0 bg-black text-center">
-                      <h5 class="card-title ">Super Terror</h5>
-                      <p class="card-title ">
-                        El Mató A Un Policía Motorizado
-                      </p>
+                      <h5 class="card-title">Super Terror</h5>
+                      <p class="card-title">El Mató A Un Policía Motorizado</p>
                     </div>
                   </a>
                 </div>
@@ -568,8 +567,8 @@
                       </div>
                     </div>
                     <div class="card-body mt-2 px-0 bg-black text-center">
-                      <h5 class="card-title ">NAFTA</h5>
-                      <p class="card-title ">Nafta</p>
+                      <h5 class="card-title">NAFTA</h5>
+                      <p class="card-title">Nafta</p>
                     </div>
                   </a>
                 </div>
@@ -631,10 +630,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">
-                            Graduation
-                          </h5>
-                          <p class="card-title ">Kanye West</p>
+                          <h5 class="card-title">Graduation</h5>
+                          <p class="card-title">Kanye West</p>
                         </div>
                       </a>
                     </div>
@@ -653,10 +650,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Yes</h5>
-                          <p class="card-title ">
-                            Pet Shop Boys
-                          </p>
+                          <h5 class="card-title">Yes</h5>
+                          <p class="card-title">Pet Shop Boys</p>
                         </div>
                       </a>
                     </div>
@@ -675,8 +670,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Como Animales</h5>
-                          <p class="card-title ">Guasones</p>
+                          <h5 class="card-title">Como Animales</h5>
+                          <p class="card-title">Guasones</p>
                         </div>
                       </a>
                     </div>
@@ -695,8 +690,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">The New Abnormal</h5>
-                          <p class="card-title ">The Strokes</p>
+                          <h5 class="card-title">The New Abnormal</h5>
+                          <p class="card-title">The Strokes</p>
                         </div>
                       </a>
                     </div>
@@ -722,10 +717,10 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">
+                          <h5 class="card-title">
                             Sueños (Un Viaje En el Tiempo)
                           </h5>
-                          <p class="card-title ">Ciro y Los Persas</p>
+                          <p class="card-title">Ciro y Los Persas</p>
                         </div>
                       </a>
                     </div>
@@ -744,10 +739,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Versiones</h5>
-                          <p class="card-title ">
-                            Las Pastillas del Abuelo
-                          </p>
+                          <h5 class="card-title">Versiones</h5>
+                          <p class="card-title">Las Pastillas del Abuelo</p>
                         </div>
                       </a>
                     </div>
@@ -766,8 +759,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Fuerza Natural</h5>
-                          <p class="card-title ">Gustavo Cerati</p>
+                          <h5 class="card-title">Fuerza Natural</h5>
+                          <p class="card-title">Gustavo Cerati</p>
                         </div>
                       </a>
                     </div>
@@ -786,8 +779,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Especial</h5>
-                          <p class="card-title ">Viejas Locas</p>
+                          <h5 class="card-title">Especial</h5>
+                          <p class="card-title">Viejas Locas</p>
                         </div>
                       </a>
                     </div>
@@ -813,10 +806,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">
-                            Abbey Road
-                          </h5>
-                          <p class="card-title ">The Beatles</p>
+                          <h5 class="card-title">Abbey Road</h5>
+                          <p class="card-title">The Beatles</p>
                         </div>
                       </a>
                     </div>
@@ -835,10 +826,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Nevermind</h5>
-                          <p class="card-title ">
-                            Nirvana
-                          </p>
+                          <h5 class="card-title">Nevermind</h5>
+                          <p class="card-title">Nirvana</p>
                         </div>
                       </a>
                     </div>
@@ -857,8 +846,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">American Idiot</h5>
-                          <p class="card-title ">Green Day</p>
+                          <h5 class="card-title">American Idiot</h5>
+                          <p class="card-title">Green Day</p>
                         </div>
                       </a>
                     </div>
@@ -877,8 +866,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Random Access Memories</h5>
-                          <p class="card-title ">Daft Punk</p>
+                          <h5 class="card-title">Random Access Memories</h5>
+                          <p class="card-title">Daft Punk</p>
                         </div>
                       </a>
                     </div>
@@ -942,10 +931,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">
-                            Abbey Road
-                          </h5>
-                          <p class="card-title ">The Beatles</p>
+                          <h5 class="card-title">Abbey Road</h5>
+                          <p class="card-title">The Beatles</p>
                         </div>
                       </a>
                     </div>
@@ -964,10 +951,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Nevermind</h5>
-                          <p class="card-title ">
-                            Nirvana
-                          </p>
+                          <h5 class="card-title">Nevermind</h5>
+                          <p class="card-title">Nirvana</p>
                         </div>
                       </a>
                     </div>
@@ -986,8 +971,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">American Idiot</h5>
-                          <p class="card-title ">Green Day</p>
+                          <h5 class="card-title">American Idiot</h5>
+                          <p class="card-title">Green Day</p>
                         </div>
                       </a>
                     </div>
@@ -1006,8 +991,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Random Access Memories</h5>
-                          <p class="card-title ">Daft Punk</p>
+                          <h5 class="card-title">Random Access Memories</h5>
+                          <p class="card-title">Daft Punk</p>
                         </div>
                       </a>
                     </div>
@@ -1034,10 +1019,10 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">
+                          <h5 class="card-title">
                             Sueños (Un Viaje En el Tiempo)
                           </h5>
-                          <p class="card-title ">Ciro y Los Persas</p>
+                          <p class="card-title">Ciro y Los Persas</p>
                         </div>
                       </a>
                     </div>
@@ -1056,10 +1041,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Versiones</h5>
-                          <p class="card-title ">
-                            Las Pastillas del Abuelo
-                          </p>
+                          <h5 class="card-title">Versiones</h5>
+                          <p class="card-title">Las Pastillas del Abuelo</p>
                         </div>
                       </a>
                     </div>
@@ -1078,8 +1061,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Fuerza Natural</h5>
-                          <p class="card-title ">Gustavo Cerati</p>
+                          <h5 class="card-title">Fuerza Natural</h5>
+                          <p class="card-title">Gustavo Cerati</p>
                         </div>
                       </a>
                     </div>
@@ -1098,8 +1081,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Especial</h5>
-                          <p class="card-title ">Viejas Locas</p>
+                          <h5 class="card-title">Especial</h5>
+                          <p class="card-title">Viejas Locas</p>
                         </div>
                       </a>
                     </div>
@@ -1126,10 +1109,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">
-                            Graduation
-                          </h5>
-                          <p class="card-title ">Kanye West</p>
+                          <h5 class="card-title">Graduation</h5>
+                          <p class="card-title">Kanye West</p>
                         </div>
                       </a>
                     </div>
@@ -1148,10 +1129,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Yes</h5>
-                          <p class="card-title ">
-                            Pet Shop Boys
-                          </p>
+                          <h5 class="card-title">Yes</h5>
+                          <p class="card-title">Pet Shop Boys</p>
                         </div>
                       </a>
                     </div>
@@ -1170,8 +1149,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">Como Animales</h5>
-                          <p class="card-title ">Guasones</p>
+                          <h5 class="card-title">Como Animales</h5>
+                          <p class="card-title">Guasones</p>
                         </div>
                       </a>
                     </div>
@@ -1190,8 +1169,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title ">The New Abnormal</h5>
-                          <p class="card-title ">The Strokes</p>
+                          <h5 class="card-title">The New Abnormal</h5>
+                          <p class="card-title">The Strokes</p>
                         </div>
                       </a>
                     </div>
@@ -1202,7 +1181,6 @@
           </div>
         </section>
       </main>
-      
     </div>
 
     <!-- Modal login -->
@@ -1394,29 +1372,28 @@
       </div>
     </div>
 
-    
-      <!-- Toast -->
-      <div
-        id="toast"
-        class="toast hide"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-        data-bs-autohide="true"
-        data-bs-delay="3000"
-      >
-        <div class="toast-body text-center">
-          <span>Mensaje del toast.</span>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="toast"
-            aria-label="Cerrar"
-          ></button>
-        </div>
+    <!-- Toast -->
+    <div
+      id="toast"
+      class="toast hide"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      data-bs-autohide="true"
+      data-bs-delay="3000"
+    >
+      <div class="toast-body text-center">
+        <span>Mensaje del toast.</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="toast"
+          aria-label="Cerrar"
+        ></button>
       </div>
+    </div>
 
-    <!-- ------------------------------- Footer -------------------------------- -->
+    <!-- Footer -->
     <footer id="pie">
       <div class="footerContent">
         <h3>Seguinos en nuestras redes</h3>
@@ -1465,14 +1442,25 @@
       <p class="dev">- Todos los derechos reservados a quién corresponda -</p>
     </footer>
 
+    <!-- Reproductor -->
+    <div class="player-container">
+      <h5 class="p-2 mb-0" id="cancionActual"></h5>
+      <audio id="player" class="player w-100" controls>
+        <source src="" type="audio/mp3" id="audioSource" />
+      </audio>
+    </div>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const player = new Plyr('#player');
+    </script>
     <script src="./navbar.js"></script>
     <script src="./usuarios.js"></script>
     <script src="./playlist.js"></script>
-    <script src="./filtro.js"></script>
+    <!-- <script src="./filtro.js"></script> -->
   </body>
 </html>

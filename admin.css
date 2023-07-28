@@ -70,6 +70,16 @@ h4 {
   color: white;
 }
 
+.btn-accion {
+  background-color: transparent;
+  color: white;
+}
+
+.btn-accion:hover {
+  background-color: #ff9800;
+  color: white;
+}
+
 section {
   display: flex;
   align-items: center;

@@ -103,6 +103,16 @@ i:hover,
   background-color: #ff9900cc;
 }
 
+.btn-play {
+  background-color: transparent;
+  color: white;
+}
+
+.btn-play:hover {
+  background-color: transparent;
+  color: white;
+}
+
 section {
   display: flex;
   align-items: center;
@@ -178,9 +188,23 @@ td {
   background-color: #ff9800;
 }
 
-table th:nth-child(1),
-table td:nth-child(1) {
+.custom-table th:nth-child(1),
+.custom-table td:nth-child(1) {
   width: 10%;
+}
+
+.custom-table th:nth-child(2),
+.custom-table td:nth-child(2) {
+  width: 35%;
+}
+.custom-table th:nth-child(3),
+.custom-table td:nth-child(3) {
+  width: 40%;
+}
+
+.custom-table th:nth-child(4),
+.custom-table td:nth-child(4) {
+  width: 15%;
 }
 
 .table-container::-webkit-scrollbar {
@@ -201,7 +225,6 @@ table td:nth-child(1) {
   background-color: #ff9800;
 }
 
-/* --------------------cambios de index-------------------- */
 .card-disc {
   border: 1px solid #ff990000;
   max-width: 300px;
@@ -241,7 +264,46 @@ table td:nth-child(1) {
   background-color: #ffa600;
   color: #000000;
 }
-/* -------------------- Login -------------------- */
+
+/* Reproductor */
+.player-container {
+  display: none;
+  position: sticky;
+  bottom: 0;
+  background-color: rgb(28, 28, 28);
+  width: 100%;
+  padding: 5px;
+}
+.player {
+  padding: 12px;
+  z-index: 999;
+  background-color: rgb(28, 28, 28);
+}
+
+/* Estilo para la barra de reproducción */
+.plyr__progress--buffer,
+.plyr__progress--played {
+  background-color: #ff9900; /* Cambia el color a tu preferencia */
+  border-radius: 0; /* Deja los bordes rectos */
+}
+
+/* Estilo para los controles del reproductor */
+.plyr__controls {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo para el botón de play/pausa */
+.plyr__control--overlaid {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Estilo para el ícono de play */
+.plyr__play-large {
+  font-size: 4em;
+}
+
+
 
 .modal {
   background-color: rgba(28, 28, 28, 0.342);
@@ -260,7 +322,7 @@ table td:nth-child(1) {
   background-color: #ff9800;
 }
 
-/* -------------------- Toast -------------------- */
+/* Toast */
 .toast {
   position: fixed;
   top: 20px;
@@ -275,7 +337,8 @@ table td:nth-child(1) {
   border: none;
   color: #000000;
 }
-/* -------------------- detalle -------------------- */
+
+/* Detalle */
 .container{
   margin-top: 100px;
   /* border: 1px solid yellowgreen; */
@@ -298,7 +361,7 @@ table td:nth-child(1) {
   /* border: 1px solid rgb(50, 169, 205); */
   
 }
-/* -------------------- contact -------------------- */
+/* Contact */
 .contact .container-fluid .container-contact .contact-campos button{
   background-color: #ffa600;
   border: none;
@@ -310,7 +373,7 @@ table td:nth-child(1) {
 }
 
 
-/* -------------------- footer -------------------- */
+/* Footer */
 #pie {
   background-color: rgba(28, 28, 28, 0.342);
   width: 100%;
@@ -367,7 +430,7 @@ table td:nth-child(1) {
   color: #ffa600;
 }
 
-/* -------------------- media querys -------------------- */
+/* Media querys */
 
 @media (max-width: 576px) {
   main {
@@ -417,7 +480,7 @@ table td:nth-child(1) {
 }
 }
 @media (min-width: 577px){
-  /* -------------------- contact -------------------- */
+  /* Contact */
   .contact .container-fluid .container-contact{
     display: flex;
     padding: 10px;
@@ -440,7 +503,7 @@ table td:nth-child(1) {
   }
 }
 @media (min-width: 1000px){
-    /* -------------------- contact -------------------- */
+    /* Contact */
     .contact .container-fluid .container-contact .contact-campos{
       padding-right: 120px;
     }

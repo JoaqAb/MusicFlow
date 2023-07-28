@@ -64,7 +64,7 @@ async function cargarCanciones() {
     // !!!!!!!!!!!!!!!!!!!!!!!!!!!! CARGAR PAGINA CON TABLA PREDETERMINADA
 
     // Llamar a la función que genera la tabla de canciones y agrega eventos
-    // generarTablaCanciones(data);
+    generarTablaCanciones(data);
 
     // Agregar evento al botón de guardar
     btnGuardar.addEventListener("click", () => {
@@ -166,7 +166,7 @@ function generarTablaCanciones(data) {
 
       // Boton para agregar las canciones
       const botonAgregar = document.createElement("button");
-      botonAgregar.classList.add("btn", "btn-sm", "bg-orange", "btn-agregar");
+      botonAgregar.classList.add("btn", "btn-sm", "bg-orange", "btn-agregar", "btn-accion");
       botonAgregar.innerHTML = '<i class="bi bi-plus-lg"></i>';
 
       // Boton para editar las canciones
@@ -176,7 +176,8 @@ function generarTablaCanciones(data) {
         "btn-sm",
         "bg-orange",
         "btn-editar",
-        "ms-2"
+        "ms-2",
+        "btn-accion"
       );
       btnEditar.innerHTML = '<i class="bi bi-pencil"></i>';
 
@@ -220,7 +221,8 @@ function generarTablaCanciones(data) {
         "btn-sm",
         "bg-orange",
         "btn-eliminar",
-        "ms-2"
+        "ms-2",
+        "btn-accion"
       );
       btnEliminar.innerHTML = '<i class="bi bi-trash"></i>';
       btnEliminar.addEventListener("click", (event) => {
@@ -328,7 +330,6 @@ tablaCanciones.addEventListener("click", (event) => {
   }
 });
 
-
 // Function para generar tabla de canciones seleccionadas
 function generarTablaCancionesSeleccionadas() {
   const cancionesSeleccionadas =
@@ -362,7 +363,7 @@ function generarTablaCancionesSeleccionadas() {
 
       const columnaAcciones = document.createElement("td");
       const botonEliminar = document.createElement("button");
-      botonEliminar.classList.add("btn", "btn-sm", "bg-orange");
+      botonEliminar.classList.add("btn", "btn-sm", "bg-orange", "btn-accion");
       botonEliminar.innerHTML = '<i class="bi bi-trash"></i>';
       botonEliminar.addEventListener("click", () => {
         eliminarCancionSeleccionada(cancion);
@@ -458,7 +459,7 @@ function generarTablaUsuarios() {
     // Columna Acciones
     const columnaAcciones = document.createElement("td");
     const botonEliminar = document.createElement("button");
-    botonEliminar.classList.add("btn", "btn-sm", "bg-orange");
+    botonEliminar.classList.add("btn", "btn-sm", "bg-orange", "btn-accion");
     botonEliminar.innerHTML = '<i class="bi bi-trash"></i>';
     botonEliminar.addEventListener("click", () => {
       eliminarUsuario(usuario);
