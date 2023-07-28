@@ -123,3 +123,8 @@ document.addEventListener("click", (event) => {
 });
 
 generarTablaCancionesSeleccionadas();
+
+// Inicializar Plyr después de que el documento se haya cargado
+document.addEventListener("DOMContentLoaded", () => {
+  new Plyr("#player");
+});

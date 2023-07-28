@@ -273,37 +273,19 @@ td {
   background-color: rgb(28, 28, 28);
   width: 100%;
   padding: 5px;
+  z-index: 999;
 }
 .player {
   padding: 12px;
-  z-index: 999;
+
   background-color: rgb(28, 28, 28);
 }
 
-/* Estilo para la barra de reproducción */
-.plyr__progress--buffer,
-.plyr__progress--played {
-  background-color: #ff9900; /* Cambia el color a tu preferencia */
-  border-radius: 0; /* Deja los bordes rectos */
+.plyr {
+  --plyr-color-main: #ff9800;
+  --plyr-audio-controls-background: rgb(28, 28, 28); 
+  --plyr-audio-control-color: #ffffff
 }
-
-/* Estilo para los controles del reproductor */
-.plyr__controls {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Estilo para el botón de play/pausa */
-.plyr__control--overlaid {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-}
-
-/* Estilo para el ícono de play */
-.plyr__play-large {
-  font-size: 4em;
-}
-
-
 
 .modal {
   background-color: rgba(28, 28, 28, 0.342);
