@@ -68,9 +68,9 @@ function guardarRegistro(event) {
   // Mostrar mensaje de registro exitoso
   mostrarToast("Registro exitoso, Ahora puedes iniciar sesión.");
 
-   // Cerrar el modal de registro
-   const btnCerrarModal = document.getElementById("btnCerrarModal");
-   btnCerrarModal.click();
+  // Cerrar el modal de registro
+  const btnCerrarModal = document.getElementById("btnCerrarModal");
+  btnCerrarModal.click();
 
   // Limpiar formulario
   registroForm.reset();
@@ -110,60 +110,60 @@ function iniciarSesion(event) {
   // Verificar si el usuario está registrado y la contraseña es válida
   if (usuarioRegistrado(loginEmailValue, loginPassValue)) {
     mensajeModal.innerText = "Bienvenido";
-    window.location.href = "usuarios.html";
+    window.location.href = "./usuarios.html";
   } else {
     mensajeModal.innerText =
       "Usuario no registrado o contraseña incorrecta. Intenta nuevamente o regístrate.";
   }
 }
 
-// Generar filas para la tabla con los usuarios registrados
-function generarTablaUsuarios() {
-  const usuarios = obtenerUsuarios();
-  const tablaUsuarios = document
-    .getElementById("tablaUsuarios")
-    .getElementsByTagName("tbody")[0];
+// // Generar filas para la tabla con los usuarios registrados
+// function generarTablaUsuarios() {
+//   const usuarios = obtenerUsuarios();
+//   const tablaUsuarios = document
+//     .getElementById("tablaUsuarios")
+//     .getElementsByTagName("tbody")[0];
 
-  // Limpiar contenido actual de la tabla
-  tablaUsuarios.innerHTML = "";
+//   // Limpiar contenido actual de la tabla
+//   tablaUsuarios.innerHTML = "";
 
-  // Generar filas para cada usuario
-  usuarios.forEach((usuario) => {
-    const fila = document.createElement("tr");
+//   // Generar filas para cada usuario
+//   usuarios.forEach((usuario) => {
+//     const fila = document.createElement("tr");
 
-    // Columna Nombre
-    const columnaNombre = document.createElement("td");
-    columnaNombre.textContent = usuario.nombre;
-    fila.appendChild(columnaNombre);
+//     // Columna Nombre
+//     const columnaNombre = document.createElement("td");
+//     columnaNombre.textContent = usuario.nombre;
+//     fila.appendChild(columnaNombre);
 
-    // Columna Email
-    const columnaEmail = document.createElement("td");
-    columnaEmail.textContent = usuario.email;
-    fila.appendChild(columnaEmail);
+//     // Columna Email
+//     const columnaEmail = document.createElement("td");
+//     columnaEmail.textContent = usuario.email;
+//     fila.appendChild(columnaEmail);
 
-    // Columna Acciones
-    const columnaAcciones = document.createElement("td");
-    const botonEliminar = document.createElement("button");
-    botonEliminar.textContent = "Eliminar";
-    botonEliminar.addEventListener("click", () => {
-      eliminarUsuario(usuario);
-    });
-    columnaAcciones.appendChild(botonEliminar);
-    fila.appendChild(columnaAcciones);
+//     // Columna Acciones
+//     const columnaAcciones = document.createElement("td");
+//     const botonEliminar = document.createElement("button");
+//     botonEliminar.textContent = "Eliminar";
+//     botonEliminar.addEventListener("click", () => {
+//       eliminarUsuario(usuario);
+//     });
+//     columnaAcciones.appendChild(botonEliminar);
+//     fila.appendChild(columnaAcciones);
 
-    // Agregar fila a la tabla
-    tablaUsuarios.appendChild(fila);
-  });
-}
-// Eliminar usuario de la lista y actualizar tabla
-function eliminarUsuario(usuario) {
-  const usuarios = obtenerUsuarios();
-  const usuariosActualizados = usuarios.filter(
-    (u) => u.email !== usuario.email
-  );
-  guardarUsuarios(usuariosActualizados);
-  generarTablaUsuarios();
-}
+//     // Agregar fila a la tabla
+//     tablaUsuarios.appendChild(fila);
+//   });
+// }
+// // Eliminar usuario de la lista y actualizar tabla
+// function eliminarUsuario(usuario) {
+//   const usuarios = obtenerUsuarios();
+//   const usuariosActualizados = usuarios.filter(
+//     (u) => u.email !== usuario.email
+//   );
+//   guardarUsuarios(usuariosActualizados);
+//   generarTablaUsuarios();
+// }
 
 // Eventos
 
@@ -175,9 +175,9 @@ const loginForm = document.getElementById("modallogin").querySelector("form");
 loginForm.addEventListener("submit", iniciarSesion);
 
 // Evento para cargar tabla de usuarios
-document.addEventListener("DOMContentLoaded", () => {
-  generarTablaUsuarios();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   generarTablaUsuarios();
+// });
 
 // Toast
 function mostrarToast(mensaje) {
@@ -188,4 +188,3 @@ function mostrarToast(mensaje) {
   const toastInstance = new bootstrap.Toast(toast);
   toastInstance.show();
 }
-// Flujo principal

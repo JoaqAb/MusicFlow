@@ -1,8 +1,9 @@
 // Var & const
 const buscador = document.getElementById("buscadorCanciones");
 const token = localStorage.getItem("token");
-const btnGuardar = document.getElementById("btnGuardar");
+const btnModalAgregar = document.getElementById("btnModalAgregar");
 const btnAgregarCancion = document.getElementById("btnAgregarCancion");
+const btnGuardarEdicion = document.getElementById("btnGuardarEdicion");
 const btnGuardarCancion = document.getElementById("btnGuardarCancion");
 const btnAgregarPredeterminado = document.getElementById(
   "btnAgregarPredeterminado"
@@ -35,10 +36,16 @@ modaledit.addEventListener("shown.bs.modal", function () {
   document.getElementById("nuevoNombre").focus();
 });
 
+// Autofocus en agregar
+const modalAgregarCancion = document.getElementById("modalAgregarCancion");
+modalAgregarCancion.addEventListener("shown.bs.modal", function () {
+  document.getElementById("agregarNombre").focus();
+});
+
 // Function para cargar canciones desde JSON y almacenar en el localStorage
 async function cargarCanciones() {
   try {
-    const response = await fetch("./resources/canciones.json");
+    const response = await fetch("./resources/jamendo.json");
     data = await response.json();
 
     // Guardar datos del JSON en localStorage
@@ -67,7 +74,7 @@ async function cargarCanciones() {
     generarTablaCanciones(data);
 
     // Agregar evento al botón de guardar
-    btnGuardar.addEventListener("click", () => {
+    btnGuardarEdicion.addEventListener("click", () => {
       // Obtener datos del formulario
       const modalTitle = document.getElementById("modalEdicionID").textContent;
       const idCancionEditar = modalTitle.split("#")[1].trim();
@@ -108,11 +115,11 @@ async function cargarCanciones() {
   } catch (error) {
     console.error("Error al cargar archivo JSON:", error);
   }
-}
+};
 
 // Function para cargar predeterminado
 async function cargarCancionesPredeterminadas() {
-  const predResponse = await fetch("./resources/canciones.json");
+  const predResponse = await fetch("./Resources/jamendo.json");
   const predData = await predResponse.json();
 
   // Obtener canciones actuales desde localStorage
@@ -128,7 +135,7 @@ async function cargarCancionesPredeterminadas() {
 
   // Actualizar JSON en localStorage
   localStorage.setItem("canciones", JSON.stringify(cancionesActualizadas));
-}
+};
 
 // Function para generar la tabla y agregar eventos
 function generarTablaCanciones(data) {
@@ -166,7 +173,13 @@ function generarTablaCanciones(data) {
 
       // Boton para agregar las canciones
       const botonAgregar = document.createElement("button");
-      botonAgregar.classList.add("btn", "btn-sm", "bg-orange", "btn-agregar", "btn-accion");
+      botonAgregar.classList.add(
+        "btn",
+        "btn-sm",
+        "bg-orange",
+        "btn-agregar",
+        "btn-accion"
+      );
       botonAgregar.innerHTML = '<i class="bi bi-plus-lg"></i>';
 
       // Boton para editar las canciones
@@ -264,7 +277,7 @@ function generarTablaCanciones(data) {
   } catch (error) {
     console.error("Error al cargar archivo JSON:", error);
   }
-}
+};
 
 // Agregar evento de entrada del buscador
 buscador.addEventListener("input", () => {
@@ -297,7 +310,10 @@ buscador.addEventListener("input", () => {
 // Agregar evento de escucha a canciones disponibles
 tablaCanciones.addEventListener("click", (event) => {
   // Verificar click en boton agregar
-  if (event.target.classList.contains("btn-agregar")) {
+  if (
+    event.target.classList.contains("btn-agregar") ||
+    event.target.classList.contains("bi-plus-lg")
+  ) {
     // Obtener fila a agregar
     const fila = event.target.closest("tr");
 
@@ -328,6 +344,44 @@ tablaCanciones.addEventListener("click", (event) => {
     // Mostrar toast de éxito
     mostrarToast(nuevaCancion.nombre, "agregarCancion");
   }
+});
+
+btnModalAgregar.addEventListener("click", () => {
+  document.getElementById("agregarNombre").value = "";
+      document.getElementById("agregarArtista").value = "";  
+})
+
+// Agregar evento btn guardar del modal de agregar canción
+btnAgregarCancion.addEventListener("click", () => {
+  const agregarNombre = document.getElementById("agregarNombre").value;
+  console.log(agregarNombre)
+  const agregarArtista = document.getElementById("agregarArtista").value;
+
+  const nuevaCancion = {
+    id: data.length + 1,
+    nombre: agregarNombre,
+    artista: agregarArtista,
+  };
+  data.push(nuevaCancion);
+
+  // Actualizar la tabla de canciones disponibles con la nueva canción
+  generarTablaCanciones(data);
+
+  // Guardar la nueva canción en el localStorage
+  localStorage.setItem("canciones", JSON.stringify(data));
+
+  // Cerrar el modal de agregar canción
+  const modalAgregarCancion = document.getElementById("modalAgregarCancion");
+  modalAgregarCancion.style.display = "none";
+  modalAgregarCancion.classList.remove("show");
+  modalAgregarCancion.setAttribute("aria-hidden", "true");
+  modalAgregarCancion.removeAttribute("aria-modal");
+  document.body.classList.remove("modal-open");
+  const modalBackdrop = document.querySelector(".modal-backdrop");
+  modalBackdrop.parentNode.removeChild(modalBackdrop);
+
+  // Mostrar toast de éxito
+  mostrarToast(nuevaCancion.nombre, "agregarCancion");
 });
 
 // Function para generar tabla de canciones seleccionadas
@@ -376,7 +430,7 @@ function generarTablaCancionesSeleccionadas() {
       bodySeleccion.appendChild(fila);
     }
   });
-}
+};
 
 // Function eliminar de canciones disponibles
 function eliminarCancionDisponible(cancion) {
@@ -398,7 +452,7 @@ function eliminarCancionDisponible(cancion) {
 
   // Mostrar toast de éxito
   mostrarToast(cancion.nombre, "eliminarCancion");
-}
+};
 
 // Function para eliminar una canción
 function eliminarCancionSeleccionada(cancion) {
@@ -414,7 +468,7 @@ function eliminarCancionSeleccionada(cancion) {
   generarTablaCancionesSeleccionadas();
 
   mostrarToast(cancion.nombre, "eliminarCancion");
-}
+};
 
 // Usuarios
 
@@ -422,7 +476,7 @@ function eliminarCancionSeleccionada(cancion) {
 function obtenerUsuarios() {
   const usuariosJSON = localStorage.getItem("usuarios");
   return usuariosJSON ? JSON.parse(usuariosJSON) : [];
-}
+};
 
 // Guardar lista en LocalStorage
 function guardarUsuarios(usuarios) {
@@ -470,7 +524,7 @@ function generarTablaUsuarios() {
     // Agregar fila a la tabla
     tablaUsuarios.appendChild(fila);
   });
-}
+};
 // Eliminar usuario de la lista y actualizar tabla
 function eliminarUsuario(usuario) {
   const usuarios = obtenerUsuarios();
@@ -481,7 +535,7 @@ function eliminarUsuario(usuario) {
   generarTablaUsuarios();
 
   mostrarToast(usuario.nombre, "eliminarUser");
-}
+};
 
 // Toast
 
@@ -500,7 +554,7 @@ function mostrarToast(mensaje, tipoAccion) {
 
   const toastInstance = new bootstrap.Toast(toast);
   toastInstance.show();
-}
+};
 
 // LLamar a function para generar la tabla de canciones seleccionadas al cargar la pagina
 generarTablaCancionesSeleccionadas();

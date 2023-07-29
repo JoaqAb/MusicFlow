@@ -11,8 +11,7 @@
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
-    />
-    <link href="styles.css" rel="stylesheet" />
+    />    
 
     <!-- Fonts & icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,10 +24,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link href="styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark/dark.css" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/d8ca64c014.js"
       crossorigin="anonymous"
     ></script>
+
+
     <title>MusicFlow</title>
   </head>
 
@@ -52,7 +56,9 @@
                 width="30"
                 class="d-inline-block align-text-top"
               />
-              <span class="text-white d-none d-md-block"> MusicFlow </span>
+              <span class="text-white d-none d-md-block m-flow">
+                MusicFlow
+              </span>
             </a>
           </div>
 
@@ -68,8 +74,10 @@
               </a>
             </div>
             <div>
-              <h4 class="d-none d-lg-block">Biblioteca</h4>
-              <i class="fa-solid fa-music d-lg-none"></i>
+              <a href="./contacto.html">
+                <h4 class="d-none d-lg-block">Contacto</h4>
+                <i class="fa-solid fa-music d-lg-none"></i>
+              </a>
             </div>
             <div class="nav-item dropdown">
               <a
@@ -82,16 +90,34 @@
                 <h4 class="d-none d-xl-block">Buscar</h4>
                 <i class="fa-solid fa-magnifying-glass d-xl-none"></i>
               </a>
-              <div class="dropdown-menu">
+
+              <!-- buscar anterior -->
+
+              <!-- <div class="dropdown-menu">
                 <form class="d-flex px-2" role="search">
                   <input
+                    id="search"
                     class="form-control me-2"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
                   />
-                  <button class="btn btn-outline-success" type="submit">
-                    Search
+                  <button class="btn" type="submit">Search</button>
+                </form>
+              </div> -->
+
+              <!--  -->
+
+              <div class="dropdown-menu">
+                <form class="d-flex px-2" role="search">
+                  <input
+                    class="form-control me-2"
+                    type="text"
+                    id="inputBusqueda"
+                    placeholder="Ingrese su búsqueda"
+                  />
+                  <button id="btnBuscar" class="btn btn-primary" type="submit">
+                    Buscar
                   </button>
                 </form>
               </div>
@@ -104,12 +130,7 @@
               data-bs-toggle="modal"
               data-bs-target="#modallogin"
             >
-              <img
-                src="./Resources/user.png"
-                alt="Logo"
-                width="30"
-                class="d-inline-block align-text-top"
-              />
+              <i class="bi bi-person-circle"></i>
             </a>
           </div>
         </div>
@@ -123,13 +144,13 @@
           <button type="button" class="btn mx-2">Hits</button>
           <button type="button" class="btn mx-2">Clásicos</button>
           <button type="button" class="btn mx-2">Más votados</button>
-          <button type="button" class="btn mx-2">Lo + Nuevos</button>
+          <button type="button" class="btn mx-2">Lo más nuevo</button>
         </div>
       </div>
 
       <main>
         <!-- Vuelve a esucharlo -->
-        <section id="vuelve" class="d-flex flex-column mt-5">
+        <section id="vuelve" class="d-flex flex-column">
           <!-- header section -->
           <div class="header-section container-fluid d-flex w-100">
             <div class="col-6 d-flex align-items-center">
@@ -172,7 +193,6 @@
                       <a href="./disco1.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -183,10 +203,10 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">
+                          <h5 class="card-title">
                             Sueños (Un Viaje En el Tiempo)
                           </h5>
-                          <p class="card-title fs-6">Ciro y Los Persas</p>
+                          <p class="card-title">Ciro y Los Persas</p>
                         </div>
                       </a>
                     </div>
@@ -195,7 +215,6 @@
                       <a href="./disco2.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -206,10 +225,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Versiones</h5>
-                          <p class="card-title fs-6">
-                            Las Pastillas del Abuelo
-                          </p>
+                          <h5 class="card-title">Versiones</h5>
+                          <p class="card-title">Las Pastillas del Abuelo</p>
                         </div>
                       </a>
                     </div>
@@ -218,7 +235,6 @@
                       <a href="./disco3.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -229,8 +245,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Fuerza Natural</h5>
-                          <p class="card-title fs-6">Gustavo Cerati</p>
+                          <h5 class="card-title">Fuerza Natural</h5>
+                          <p class="card-title">Gustavo Cerati</p>
                         </div>
                       </a>
                     </div>
@@ -239,7 +255,6 @@
                       <a href="./disco4.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -250,8 +265,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Especial</h5>
-                          <p class="card-title fs-6">Viejas Locas</p>
+                          <h5 class="card-title">Especial</h5>
+                          <p class="card-title">Viejas Locas</p>
                         </div>
                       </a>
                     </div>
@@ -268,7 +283,6 @@
                       <a href="./disco1.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -279,10 +293,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">
-                            Sueños (Un Viaje En el Tiempo)
-                          </h5>
-                          <p class="card-title fs-6">Ciro y Los Persas</p>
+                          <h5 class="card-title">Abbey Road</h5>
+                          <p class="card-title">The Beatles</p>
                         </div>
                       </a>
                     </div>
@@ -291,7 +303,6 @@
                       <a href="./disco2.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -302,10 +313,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Versiones</h5>
-                          <p class="card-title fs-6">
-                            Las Pastillas del Abuelo
-                          </p>
+                          <h5 class="card-title">Nevermind</h5>
+                          <p class="card-title">Nirvana</p>
                         </div>
                       </a>
                     </div>
@@ -314,7 +323,6 @@
                       <a href="./disco3.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -325,8 +333,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Fuerza Natural</h5>
-                          <p class="card-title fs-6">Gustavo Cerati</p>
+                          <h5 class="card-title">American Idiot</h5>
+                          <p class="card-title">Green Day</p>
                         </div>
                       </a>
                     </div>
@@ -335,7 +343,6 @@
                       <a href="./disco4.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -346,8 +353,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Especial</h5>
-                          <p class="card-title fs-6">Viejas Locas</p>
+                          <h5 class="card-title">Random Access Memories</h5>
+                          <p class="card-title">Daft Punk</p>
                         </div>
                       </a>
                     </div>
@@ -364,7 +371,6 @@
                       <a href="./disco1.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -375,10 +381,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">
-                            Sueños (Un Viaje En el Tiempo)
-                          </h5>
-                          <p class="card-title fs-6">Ciro y Los Persas</p>
+                          <h5 class="card-title">Graduation</h5>
+                          <p class="card-title">Kanye West</p>
                         </div>
                       </a>
                     </div>
@@ -387,7 +391,6 @@
                       <a href="./disco2.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -398,10 +401,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Versiones</h5>
-                          <p class="card-title fs-6">
-                            Las Pastillas del Abuelo
-                          </p>
+                          <h5 class="card-title">Yes</h5>
+                          <p class="card-title">Pet Shop Boys</p>
                         </div>
                       </a>
                     </div>
@@ -410,7 +411,6 @@
                       <a href="./disco3.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -421,29 +421,28 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Fuerza Natural</h5>
-                          <p class="card-title fs-6">Gustavo Cerati</p>
+                          <h5 class="card-title">Como Animales</h5>
+                          <p class="card-title">Guasones</p>
                         </div>
                       </a>
                     </div>
 
                     <div class="col-3 px-2 card-disc">
-                      <a href="./disco4.html">
+                      <a href="#">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
                           <img
-                            src="./Resources/21.jpg"
+                            src="./Resources/6.jpg"
                             class="card-img"
                             alt="..."
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Especial</h5>
-                          <p class="card-title fs-6">Viejas Locas</p>
+                          <h5 class="card-title">The New Abnormal</h5>
+                          <p class="card-title">The Strokes</p>
                         </div>
                       </a>
                     </div>
@@ -452,6 +451,29 @@
               </div>
             </div>
           </div>
+        </section>
+        <!-- Playlist -->
+        <section id="playlist" class="d-flex flex-column mt-5">
+          <!-- header section -->
+          <div class="header-section container-fluid d-flex w-100">
+            <div class="col-6 d-flex align-items-center">
+              <h2 class="text-white m-0">Top Ten</h2>
+            </div>
+          </div>
+          <div class="table-container d-flex flex-column">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Top</th>
+                  <th>Nombre</th>
+                  <th>Artista</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="tablaPlaylist"></tbody>
+            </table>
+          </div>
+          <!-- Body section con carousel -->
         </section>
         <!-- Descubre -->
         <section id="vuelve" class="d-flex flex-column mt-5">
@@ -482,8 +504,8 @@
                       </div>
                     </div>
                     <div class="card-body mt-2 px-0 bg-black text-center">
-                      <h5 class="card-title fs-6">Hola Precioso</h5>
-                      <p class="card-title fs-6">El Kuelgue</p>
+                      <h5 class="card-title">Hola Precioso</h5>
+                      <p class="card-title">El Kuelgue</p>
                     </div>
                   </a>
                 </div>
@@ -503,8 +525,8 @@
                       </div>
                     </div>
                     <div class="card-body mt-2 px-0 bg-black text-center">
-                      <h5 class="card-title fs-6">EADDA9223</h5>
-                      <p class="card-title fs-6">Fito Paez</p>
+                      <h5 class="card-title">EADDA9223</h5>
+                      <p class="card-title">Fito Paez</p>
                     </div>
                   </a>
                 </div>
@@ -524,10 +546,8 @@
                       </div>
                     </div>
                     <div class="card-body mt-2 px-0 bg-black text-center">
-                      <h5 class="card-title fs-6">Super Terror</h5>
-                      <p class="card-title fs-6">
-                        El Mató A Un Policía Motorizado
-                      </p>
+                      <h5 class="card-title">Super Terror</h5>
+                      <p class="card-title">El Mató A Un Policía Motorizado</p>
                     </div>
                   </a>
                 </div>
@@ -547,8 +567,8 @@
                       </div>
                     </div>
                     <div class="card-body mt-2 px-0 bg-black text-center">
-                      <h5 class="card-title fs-6">NAFTA</h5>
-                      <p class="card-title fs-6">Nafta</p>
+                      <h5 class="card-title">NAFTA</h5>
+                      <p class="card-title">Nafta</p>
                     </div>
                   </a>
                 </div>
@@ -561,7 +581,7 @@
           <!-- header section -->
           <div class="header-section container-fluid d-flex w-100">
             <div class="col-6 d-flex align-items-center">
-              <h2 class="text-white m-0">Vuelve a escucharlo</h2>
+              <h2 class="text-white m-0">Selecciones</h2>
             </div>
 
             <!-- Carousel control buttons -->
@@ -597,10 +617,96 @@
                     style="margin-left: 1px; margin-right: 1px"
                   >
                     <div class="col-3 px-2 card-disc">
+                      <a href="./error.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/18.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Graduation</h5>
+                          <p class="card-title">Kanye West</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./error.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/19.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Yes</h5>
+                          <p class="card-title">Pet Shop Boys</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./error.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/12.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Como Animales</h5>
+                          <p class="card-title">Guasones</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./error.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/6.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">The New Abnormal</h5>
+                          <p class="card-title">The Strokes</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Segunda tanda del slide -->
+                <div class="carousel-item">
+                  <div
+                    class="row d-flex"
+                    style="margin-left: 1px; margin-right: 1px"
+                  >
+                    <div class="col-3 px-2 card-disc">
                       <a href="./disco1.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -611,10 +717,10 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">
+                          <h5 class="card-title">
                             Sueños (Un Viaje En el Tiempo)
                           </h5>
-                          <p class="card-title fs-6">Ciro y Los Persas</p>
+                          <p class="card-title">Ciro y Los Persas</p>
                         </div>
                       </a>
                     </div>
@@ -623,7 +729,6 @@
                       <a href="./disco2.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -634,10 +739,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Versiones</h5>
-                          <p class="card-title fs-6">
-                            Las Pastillas del Abuelo
-                          </p>
+                          <h5 class="card-title">Versiones</h5>
+                          <p class="card-title">Las Pastillas del Abuelo</p>
                         </div>
                       </a>
                     </div>
@@ -646,7 +749,6 @@
                       <a href="./disco3.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -657,8 +759,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Fuerza Natural</h5>
-                          <p class="card-title fs-6">Gustavo Cerati</p>
+                          <h5 class="card-title">Fuerza Natural</h5>
+                          <p class="card-title">Gustavo Cerati</p>
                         </div>
                       </a>
                     </div>
@@ -667,7 +769,6 @@
                       <a href="./disco4.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -678,167 +779,97 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Especial</h5>
-                          <p class="card-title fs-6">Viejas Locas</p>
+                          <h5 class="card-title">Especial</h5>
+                          <p class="card-title">Viejas Locas</p>
                         </div>
                       </a>
                     </div>
                   </div>
                 </div>
-
-                <!-- Segunda tanda del slide -->
-                <div class="carousel-item">
-                  <div class="row" style="margin-left: 1px; margin-right: 1px">
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/5.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/13.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/17.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/9.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 <!-- Tercera tanda del slide -->
                 <div class="carousel-item">
-                  <div class="row" style="margin-left: 1px; margin-right: 1px">
+                  <div
+                    class="row d-flex"
+                    style="margin-left: 1px; margin-right: 1px"
+                  >
                     <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/18.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="card-body px-0 bg-black">
-                        <h5 class="card-title fs-6"></h5>
-                        <p class="card-title fs-6"></p>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/19.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="card-body px-0 bg-black">
-                        <h5 class="card-title fs-6"></h5>
-                        <p class="card-title fs-6"></p>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/21.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="card-body px-0 bg-black">
-                        <h5 class="card-title fs-6"></h5>
-                        <p class="card-title fs-6"></p>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/12.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
+                      <a href="./disco1.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/5.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
                         </div>
-                      </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Abbey Road</h5>
+                          <p class="card-title">The Beatles</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./disco2.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/13.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Nevermind</h5>
+                          <p class="card-title">Nirvana</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./disco3.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/17.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">American Idiot</h5>
+                          <p class="card-title">Green Day</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./disco4.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/9.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Random Access Memories</h5>
+                          <p class="card-title">Daft Punk</p>
+                        </div>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -851,7 +882,7 @@
           <!-- header section -->
           <div class="header-section container-fluid d-flex w-100">
             <div class="col-6 d-flex align-items-center">
-              <h2 class="text-white m-0">Vuelve a escucharlo</h2>
+              <h2 class="text-white m-0">Favoritos</h2>
             </div>
 
             <!-- Carousel control buttons -->
@@ -887,10 +918,97 @@
                     style="margin-left: 1px; margin-right: 1px"
                   >
                     <div class="col-3 px-2 card-disc">
+                      <a href="./error.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/5.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Abbey Road</h5>
+                          <p class="card-title">The Beatles</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./error.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/13.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Nevermind</h5>
+                          <p class="card-title">Nirvana</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./error.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/17.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">American Idiot</h5>
+                          <p class="card-title">Green Day</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./error.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/9.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Random Access Memories</h5>
+                          <p class="card-title">Daft Punk</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Segunda tanda del slide -->
+                <div class="carousel-item">
+                  <div
+                    class="row d-flex"
+                    style="margin-left: 1px; margin-right: 1px"
+                  >
+                    <div class="col-3 px-2 card-disc">
                       <a href="./disco1.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -901,10 +1019,10 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">
+                          <h5 class="card-title">
                             Sueños (Un Viaje En el Tiempo)
                           </h5>
-                          <p class="card-title fs-6">Ciro y Los Persas</p>
+                          <p class="card-title">Ciro y Los Persas</p>
                         </div>
                       </a>
                     </div>
@@ -913,7 +1031,6 @@
                       <a href="./disco2.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -924,10 +1041,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Versiones</h5>
-                          <p class="card-title fs-6">
-                            Las Pastillas del Abuelo
-                          </p>
+                          <h5 class="card-title">Versiones</h5>
+                          <p class="card-title">Las Pastillas del Abuelo</p>
                         </div>
                       </a>
                     </div>
@@ -936,7 +1051,6 @@
                       <a href="./disco3.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -947,8 +1061,8 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Fuerza Natural</h5>
-                          <p class="card-title fs-6">Gustavo Cerati</p>
+                          <h5 class="card-title">Fuerza Natural</h5>
+                          <p class="card-title">Gustavo Cerati</p>
                         </div>
                       </a>
                     </div>
@@ -957,7 +1071,6 @@
                       <a href="./disco4.html">
                         <div
                           class="card d-inline-block"
-                          style="height: 82%"
                           data-bs-toggle="modal"
                           data-bs-target="#modal1"
                         >
@@ -968,167 +1081,98 @@
                           />
                         </div>
                         <div class="card-body px-0 bg-black">
-                          <h5 class="card-title fs-6">Especial</h5>
-                          <p class="card-title fs-6">Viejas Locas</p>
+                          <h5 class="card-title">Especial</h5>
+                          <p class="card-title">Viejas Locas</p>
                         </div>
                       </a>
                     </div>
                   </div>
                 </div>
 
-                <!-- Segunda tanda del slide -->
-                <div class="carousel-item">
-                  <div class="row" style="margin-left: 1px; margin-right: 1px">
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/5.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/13.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/17.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/9.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 <!-- Tercera tanda del slide -->
                 <div class="carousel-item">
-                  <div class="row" style="margin-left: 1px; margin-right: 1px">
+                  <div
+                    class="row d-flex"
+                    style="margin-left: 1px; margin-right: 1px"
+                  >
                     <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/18.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="card-body px-0 bg-black">
-                        <h5 class="card-title fs-6"></h5>
-                        <p class="card-title fs-6"></p>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/19.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="card-body px-0 bg-black">
-                        <h5 class="card-title fs-6"></h5>
-                        <p class="card-title fs-6"></p>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/21.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="card-body px-0 bg-black">
-                        <h5 class="card-title fs-6"></h5>
-                        <p class="card-title fs-6"></p>
-                      </div>
-                    </div>
-
-                    <div class="col-3 px-2 card-disc">
-                      <div
-                        class="card d-inline-block"
-                        style="height: 82%"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modal1"
-                      >
-                        <img
-                          src="./Resources/12.jpg"
-                          class="card-img"
-                          alt="..."
-                        />
-                        <div class="card-body px-1">
-                          <h5 class="card-title text-center fs-6"></h5>
+                      <a href="./disco1.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/18.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
                         </div>
-                      </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Graduation</h5>
+                          <p class="card-title">Kanye West</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./disco2.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/19.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Yes</h5>
+                          <p class="card-title">Pet Shop Boys</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="./disco3.html">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/12.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">Como Animales</h5>
+                          <p class="card-title">Guasones</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="col-3 px-2 card-disc">
+                      <a href="#">
+                        <div
+                          class="card d-inline-block"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modal1"
+                        >
+                          <img
+                            src="./Resources/6.jpg"
+                            class="card-img"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="card-body px-0 bg-black">
+                          <h5 class="card-title">The New Abnormal</h5>
+                          <p class="card-title">The Strokes</p>
+                        </div>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1166,17 +1210,19 @@
               <div class="container-fluid">
                 <div class="row d-flex">
                   <div>
-                    <form method="post" novalidate>
+                    <form method="post">
                       <div class="form-group">
                         <label>Email:</label>
                         <input
                           autofocus
-                          type="char"
+                          type="email"
+                          maxlength="30"
                           placeholder="Email"
-                          id="email"
+                          id="loginEmail"
                           name="email"
                           class="form-control"
                           required="required"
+                          autocomplete="off"
                         />
                       </div>
 
@@ -1184,14 +1230,16 @@
                         <label>Contraseña:</label>
                         <input
                           type="password"
-                          placeholder="Contraseña"                          
+                          placeholder="Contraseña"
                           maxlength="12"
-                          id="pass"
+                          id="loginPass"
                           name="pass"
                           class="form-control"
                           required="required"
                         />
                       </div>
+
+                      <div id="mensajeModal" class="mt-2"></div>
 
                       <div class="form-group d-flex gap-3 mt-3">
                         <div class="col-6 w-auto">
@@ -1252,20 +1300,34 @@
               <div class="container-fluid">
                 <div class="row d-flex">
                   <div>
-                    <form id="registroForm" novalidate>
+                    <form id="registroForm">
                       <div class="form-group">
+                        <label>Nombre:</label>
+                        <input
+                          autofocus
+                          type="text"
+                          placeholder="Nombre"
+                          maxlength="12"
+                          id="registroNombre"
+                          name="nombre"
+                          class="form-control"
+                          required="required"
+                          autocomplete="off"
+                        />
+                      </div>
+                      <div class="form-group mt-3">
                         <label>Email:</label>
                         <input
                           autofocus
-                          type="char"
+                          type="email"
                           placeholder="Email"
+                          maxlength="30"
                           id="registroEmail"
                           name="email"
                           class="form-control"
                           required="required"
                         />
                       </div>
-
                       <div class="form-group mt-3">
                         <label>Contraseña:</label>
                         <input
@@ -1279,6 +1341,8 @@
                         />
                       </div>
 
+                      <div id="mensajeModal"></div>
+
                       <div class="form-group d-flex gap-3 mt-3">
                         <div class="col-6 w-auto">
                           <button
@@ -1290,6 +1354,7 @@
                         </div>
                         <div class="col-6 w-auto">
                           <a
+                            id="btnCerrarModal"
                             data-bs-toggle="modal"
                             data-bs-target="#modallogin"
                             class="btn log-btn text-white w-100"
@@ -1308,18 +1373,27 @@
     </div>
 
     <!-- Toast -->
-
-    <div id="toast-container">
-      <div class="toast align-items-center align-self-center" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <div class="toast-body">
-          </div>
-          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
+    <div
+      id="toast"
+      class="toast hide"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      data-bs-autohide="true"
+      data-bs-delay="3000"
+    >
+      <div class="toast-body text-center">
+        <span>Mensaje del toast.</span>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="toast"
+          aria-label="Cerrar"
+        ></button>
       </div>
     </div>
 
-    <!-- ------------------------------- Footer -------------------------------- -->
+    <!-- Footer -->
     <footer id="pie">
       <div class="footerContent">
         <h3>Seguinos en nuestras redes</h3>
@@ -1367,12 +1441,25 @@
       </div>
       <p class="dev">- Todos los derechos reservados a quién corresponda -</p>
     </footer>
+
+    <!-- Reproductor -->
+    <div class="player-container">
+      <h5 class="p-2 mb-0" id="cancionActual"></h5>
+      <audio id="player" class="player w-100" controls>
+        <source src="" type="audio/mp3" id="audioSource" />
+      </audio>
+    </div>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11%22%3E"></script> -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script src="./navbar.js"></script>
-    <script src="./login.js"></script>
+    <script src="./usuarios.js"></script>
+    <script src="./playlist.js"></script>
+    <!-- <script src="./filtro.js"></script> -->
   </body>
 </html>

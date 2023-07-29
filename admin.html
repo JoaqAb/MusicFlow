@@ -140,6 +140,7 @@
               <div class="d-flex my-2 gap-3">
                 <div>
                   <button
+                    id="btnModalAgregar"
                     type="button"
                     class="btn"
                     data-bs-toggle="modal"
@@ -246,16 +247,16 @@
                   <input
                     type="text"
                     class="form-control"
-                    id="nuevoNombre"
+                    id="agregarNombre"
                     required
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="artista" class="form-label">Artista:</label>
+                  <label for="agregarArtista" class="form-label">Artista:</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="nuevoArtista"
+                    id="agregarArtista"
                     required
                   />
                 </div>
@@ -265,7 +266,7 @@
               <button type="button" class="btn" data-bs-dismiss="modal">
                 Cancelar
               </button>
-              <button type="button" class="btn" id="btnGuardarCancion">
+              <button type="button" class="btn" id="btnAgregarCancion">
                 Guardar
               </button>
             </div>
@@ -333,7 +334,7 @@
               <button type="button" class="btn" data-bs-dismiss="modal">
                 Cancelar
               </button>
-              <button type="submit" class="btn" id="btnGuardar">Guardar</button>
+              <button type="submit" class="btn" id="btnGuardarEdicion">Guardar</button>
             </div>
           </div>
         </div>

@@ -1,3 +1,15 @@
+// Función para obtener los datos del JSON
+async function obtenerDatosDelJSON() {
+  try {
+    const response = await fetch("./Resources/jamendo.json");
+    const datos = await response.json();
+    return datos;
+  } catch (error) {
+    console.error("Error al obtener los datos del JSON:", error);
+    return [];
+  }
+}
+
 // Funtion para generar tabla de canciones seleccionadas
 function generarTablaCancionesSeleccionadas() {
   const cancionesSeleccionadas =
@@ -26,6 +38,7 @@ function generarTablaCancionesSeleccionadas() {
     const columnaAcciones = document.createElement("td");
     const botonPlay = document.createElement("button");
     botonPlay.classList.add("btn", "btn-lg", "bg-orange", "btn-play");
+    botonPlay.setAttribute("data-id", cancion.id);
     botonPlay.innerHTML = '<i class="bi bi-play-circle-fill"></i>';
     columnaAcciones.appendChild(botonPlay);
     fila.appendChild(columnaAcciones);
@@ -35,7 +48,7 @@ function generarTablaCancionesSeleccionadas() {
 }
 
 // Function para reproducir audio
-function reproducirAudio(url, titulo) {
+function reproducirAudio(url, nombre, artista) {
   const player = document.getElementById("player");
   const audioSource = document.getElementById("audioSource");
   const playerContainer = document.querySelector(".player-container");
@@ -52,7 +65,7 @@ function reproducirAudio(url, titulo) {
   playerContainer.style.display = "block"; // Mostrar el reproductor
 
   // Actualizar el título de la canción que está sonando
-  cancionActual.textContent = titulo;
+  cancionActual.textContent = nombre + " - " + artista;
 
   // Cargar la canción y luego reproducirla
   player.load();
@@ -60,71 +73,38 @@ function reproducirAudio(url, titulo) {
 }
 
 // Agregar evento al botón play y al ícono de play
-document.addEventListener("click", (event) => {
+document.addEventListener("click", async (event) => {
   // Verificar click en botón play o ícono de play
   if (
     event.target.classList.contains("btn-play") ||
     event.target.classList.contains("bi-play-circle-fill")
   ) {
-    // Obtener ID de fila
+    // Obtener el ID de la canción seleccionada
     const fila = event.target.closest("tr");
-    const idCancion = parseInt(fila.firstChild.textContent);
+    const idCancion = parseInt(
+      fila.querySelector("[data-id]").getAttribute("data-id")
+    );
 
-    // Lista de URL y títulos para reproducir
-    const listaCanciones = [
-      {
-        url: "./Resources/music/Coolio - Gangstas Paradise (feat. L.V.).mp3",
-        titulo: "Coolio - Gangsta's Paradise",
-      },
-      {
-        url: "./Resources/music/The Beatles - Hey Jude.mp3",
-        titulo: "The Beatles - Hey Jude",
-      },
-      {
-        url: "./Resources/music/Pink Floyd - Another Brick In The Wall, Part Two.mp3",
-        titulo: "Pink Floyd - Another Brick In The Wall, Part Two",
-      },
-      {
-        url: "./Resources/music/The Rolling Stones - (I Can't Get No) Satisfaction.mp3",
-        titulo: "The Rolling Stones - (I Can't Get No) Satisfaction",
-      },
-      {
-        url: "./Resources/music/Eminem - Lose Yourself.mp3",
-        titulo: "Eminem - Lose Yourself",
-      },
-      {
-        url: "./Resources/music/The Beatles - Let It Be.mp3",
-        titulo: "The Beatles - Let It Be",
-      },
-      {
-        url: "./Resources/music/Bee Gees - Stayin' Alive.mp3",
-        titulo: "Bee Gees - Stayin' Alive",
-      },
-      {
-        url: "./Resources/music/The Police - Every Breath You Take.mp3",
-        titulo: "The Police - Every Breath You Take",
-      },
-      {
-        url: "./Resources/music/George Harrison - My Sweet Lord.mp3",
-        titulo: "George Harrison - My Sweet Lord",
-      },
-      {
-        url: "./Resources/music/Michael Jackson - Billie Jean.mp3",
-        titulo: "Michael Jackson - Billie Jean",
-      },
-    ];
+    // Obtener datos del JSON
+    const cancionesSeleccionadas = await obtenerDatosDelJSON();
 
-    // Verificar ID y reproducir
-    if (idCancion >= 1 && idCancion <= listaCanciones.length) {
-      const { url, titulo } = listaCanciones[idCancion - 1];
-      reproducirAudio(url, titulo);
+    // Buscar la canción en el JSON
+    const cancionSeleccionada = cancionesSeleccionadas.find(
+      (cancion) => parseInt(cancion.id) === idCancion
+    );
+
+    // Verificar si se encontró la canción antes de reproducirla
+    if (cancionSeleccionada) {
+      const { audio, nombre, artista } = cancionSeleccionada;
+      reproducirAudio(audio, nombre, artista);
+    } else {
+      console.error("No se encontró la canción en el JSON.");
     }
   }
 });
 
-generarTablaCancionesSeleccionadas();
-
 // Inicializar Plyr después de que el documento se haya cargado
 document.addEventListener("DOMContentLoaded", () => {
+  generarTablaCancionesSeleccionadas();
   new Plyr("#player");
 });
