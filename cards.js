@@ -27,4 +27,4 @@ function nuevoArray(array) {
   return array;
 }
 
-window.addEventListener("load", cargarJSON);
+document.addEventListener("DOMContentLoaded", cargarJSON);
