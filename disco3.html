@@ -91,13 +91,18 @@
               <div class="dropdown-menu">
                 <form class="d-flex px-2" role="search">
                   <input
-                    id="search"
                     class="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
+                    type="text"
+                    id="searchInput"
+                    placeholder="Ingrese su búsqueda"
                   />
-                  <button class="btn" type="submit">Search</button>
+                  <button
+                    id="searchButton"
+                    class="btn btn-primary"
+                    type="submit"
+                  >
+                    Buscar
+                  </button>
                 </form>
               </div>
             </div>
@@ -637,7 +642,7 @@
         </div>
       </main>
 
-      <!-- Modal login -->
+      <!-- Modal Login -->
       <div>
         <div
           class="modal fade"
@@ -664,17 +669,19 @@
                 <div class="container-fluid">
                   <div class="row d-flex">
                     <div>
-                      <form method="post" novalidate>
+                      <form method="post">
                         <div class="form-group">
                           <label>Email:</label>
                           <input
                             autofocus
                             type="email"
+                            maxlength="30"
                             placeholder="Email"
                             id="loginEmail"
                             name="email"
                             class="form-control"
                             required="required"
+                            autocomplete="off"
                           />
                         </div>
 
@@ -690,6 +697,8 @@
                             required="required"
                           />
                         </div>
+
+                        <div id="mensajeModal" class="mt-2"></div>
 
                         <div class="form-group d-flex gap-3 mt-3">
                           <div class="col-6 w-auto">
@@ -750,20 +759,34 @@
                 <div class="container-fluid">
                   <div class="row d-flex">
                     <div>
-                      <form id="registroForm" novalidate>
+                      <form id="registroForm">
                         <div class="form-group">
+                          <label>Nombre:</label>
+                          <input
+                            autofocus
+                            type="text"
+                            placeholder="Nombre"
+                            maxlength="12"
+                            id="registroNombre"
+                            name="nombre"
+                            class="form-control"
+                            required="required"
+                            autocomplete="off"
+                          />
+                        </div>
+                        <div class="form-group mt-3">
                           <label>Email:</label>
                           <input
                             autofocus
                             type="email"
                             placeholder="Email"
+                            maxlength="30"
                             id="registroEmail"
                             name="email"
                             class="form-control"
                             required="required"
                           />
                         </div>
-
                         <div class="form-group mt-3">
                           <label>Contraseña:</label>
                           <input
@@ -777,6 +800,8 @@
                           />
                         </div>
 
+                        <div id="mensajeModal"></div>
+
                         <div class="form-group d-flex gap-3 mt-3">
                           <div class="col-6 w-auto">
                             <button
@@ -788,6 +813,7 @@
                           </div>
                           <div class="col-6 w-auto">
                             <a
+                              id="btnCerrarModal"
                               data-bs-toggle="modal"
                               data-bs-target="#modallogin"
                               class="btn log-btn text-white w-100"
@@ -805,7 +831,28 @@
         </div>
       </div>
 
-      <!-- footer -->
+      <!-- Toast -->
+      <div
+        id="toast"
+        class="toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-autohide="true"
+        data-bs-delay="3000"
+      >
+        <div class="toast-body text-center">
+          <span>Mensaje del toast.</span>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Cerrar"
+          ></button>
+        </div>
+      </div>
+
+      <!-- Footer -->
       <footer id="pie">
         <div class="footerContent">
           <h3>Seguinos en nuestras redes</h3>
@@ -851,7 +898,6 @@
             ></a>
           </div>
         </div>
-
         <p class="dev">- Todos los derechos reservados a quién corresponda -</p>
       </footer>
     </div>

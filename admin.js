@@ -24,11 +24,9 @@ const bodySeleccion = document.getElementById("bodySeleccion");
 if (!token) {
   window.location.href = "error.html";
 }
-// else {
-//   localStorage.removeItem("token");
-// }
-
-// Canciones
+else {
+  localStorage.removeItem("token");
+}
 
 // Autofocus en edit
 const modaledit = document.getElementById("modaledit");
@@ -58,10 +56,10 @@ async function cargarCanciones() {
     // Agregar evento al botón Agregar Predeterminado
     btnAgregarPredeterminado.addEventListener("click", async () => {
       try {
-        // Llamamos a la función para cargar las canciones predeterminadas
+        // Function para cargar las canciones predeterminadas
         await cargarCancionesPredeterminadas();
 
-        // Generamos tabla de canciones actualizada con las canciones fusionadas
+        // Tabla de canciones actualizada con las canciones fusionadas
         generarTablaCanciones(JSON.parse(localStorage.getItem("canciones")));
       } catch (error) {
         console.error("Error al cargar canciones predeterminadas:", error);
@@ -101,7 +99,7 @@ async function cargarCanciones() {
         // Generar tabla de canciones actualizada
         generarTablaCanciones(canciones);
 
-        // Cerrar el modal de edición manualmente
+        // Cerrar el modal de edición
         const modalEdit = document.getElementById("modaledit");
         modalEdit.style.display = "none";
         modalEdit.classList.remove("show");
@@ -125,7 +123,7 @@ async function cargarCancionesPredeterminadas() {
   // Obtener canciones actuales desde localStorage
   const canciones = JSON.parse(localStorage.getItem("canciones")) || [];
 
-  // Filtramos las canciones predeterminadas para evitar duplicados
+  // Filtro canciones predeterminadas para evitar duplicados
   const cancionesNuevas = predData.filter((cancionPred) => {
     return !canciones.some((cancion) => cancion.id === cancionPred.id);
   });
@@ -279,7 +277,7 @@ function generarTablaCanciones(data) {
   }
 };
 
-// Agregar evento de entrada del buscador
+// Evento de entrada del buscador
 buscador.addEventListener("input", () => {
   // Obtener termino ingresado
   const terminoBusqueda = buscador.value.trim().toLowerCase();
@@ -307,7 +305,7 @@ buscador.addEventListener("input", () => {
   });
 });
 
-// Agregar evento de escucha a canciones disponibles
+// Evento de escucha a canciones disponibles
 tablaCanciones.addEventListener("click", (event) => {
   // Verificar click en boton agregar
   if (
@@ -351,7 +349,7 @@ btnModalAgregar.addEventListener("click", () => {
       document.getElementById("agregarArtista").value = "";  
 })
 
-// Agregar evento btn guardar del modal de agregar canción
+// Evento btn guardar del modal de agregar canción
 btnAgregarCancion.addEventListener("click", () => {
   const agregarNombre = document.getElementById("agregarNombre").value;
   console.log(agregarNombre)

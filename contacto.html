@@ -38,111 +38,152 @@
     <div
       class="main-box container-fluid p-0 d-flex flex-column justify-content-start h-100"
     >
-<!-- Navbar -->
-<nav class="navbar w-100 position-fixed top-0 left-0 z-2">
-  <div
-    class="container-fluid w-100 d-flex justify-content-between align-items-center"
-  >
-    <div class="col-4 container-fluid">
-      <a class="navbar-brand d-flex gap-2" href="./index.html">
-        <img
-          src="./Resources/logo_provisorio.png"
-          alt="Logo"
-          width="30"
-          class="d-inline-block align-text-top"
-        />
-        <span class="text-white d-none d-md-block m-flow"> MusicFlow </span>
-      </a>
-    </div>
-
-    <div class="col-4 d-flex justify-content-between align-items-center">
-      <div>
-        <a href="./index.html">
-          <h4 class="d-none d-lg-block">Inicio</h4>
-          <i class="fa-solid fa-house d-lg-none"></i>
-        </a>
-      </div>
-      <div>
-        <a href="./nosotros.html">
-          <h4 class="d-none d-lg-block">Nosotros</h4>
-          <i class="fa-regular fa-compass d-lg-none"></i>
-        </a>
-      </div>
-      <div>
-        <a href="./contacto.html">
-          <h4 class="d-none d-lg-block">Contacto</h4>
-          <i class="fa-solid fa-music d-lg-none"></i>
-        </a>
-      </div>
-      <div class="nav-item dropdown">
-        <a
-          class="d-flex align-items-center nav-link"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <h4 class="d-none d-xl-block">Buscar</h4>
-          <i class="fa-solid fa-magnifying-glass d-xl-none"></i>
-        </a>
-        <div class="dropdown-menu">
-          <form class="d-flex px-2" role="search">
-            <input
-              id="search"
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-4 container-fluid d-flex justify-content-end pe-0">
-      <a
-        class="navbar-brand d-flex gap-2"
-        data-bs-toggle="modal"
-        data-bs-target="#modallogin"
-      >
-      <i class="bi bi-person-circle"></i>
-      </a>
-    </div>
-  </div>
-</nav>
-    <!-- Banner -->
+      <!-- Banner -->
       <div class="bg-image align-items-center">
         <div class="justify-content-center container-fluid w-100 d-flex">
           <h2 class="txt titulo fs-1"><b>Contáctenos</b></h2>
         </div>
       </div>
-    <main class="contact">
-        <div class="container-fluid">
-            <div class="container-contact">
-                <div class="contact-image">
-                    <img src="./Resources/contact.png" alt="Imagen de ejemplo" class="img-contact">
-                </div>
-                <div class="contact-campos">
-                    <form class="campos" action="https://formsubmit.co/danirui230390@gmail.com" method="post">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Lilian Plastibol" maxlength="20" minlength="6" name="name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" placeholder="user@ejemplo.com" name="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí" name="message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-                    </form>
-                </div>
+
+      <!-- Navbar -->
+      <nav class="navbar w-100 position-fixed top-0 left-0 z-2">
+        <div
+          class="container-fluid w-100 d-flex justify-content-between align-items-center"
+        >
+          <div class="col-4 container-fluid">
+            <a class="navbar-brand d-flex gap-2" href="./index.html">
+              <img
+                src="./Resources/logo_provisorio.png"
+                alt="Logo"
+                width="30"
+                class="d-inline-block align-text-top"
+              />
+              <span class="text-white d-none d-md-block m-flow">
+                MusicFlow
+              </span>
+            </a>
+          </div>
+
+          <div class="col-4 d-flex justify-content-between align-items-center">
+            <div>
+              <a href="./index.html">
+                <h4 class="d-none d-lg-block">Inicio</h4>
+                <i class="fa-solid fa-house d-lg-none"></i>
+              </a>
             </div>
+            <div>
+              <a href="./nosotros.html">
+                <h4 class="d-none d-lg-block">Nosotros</h4>
+                <i class="fa-regular fa-compass d-lg-none"></i>
+              </a>
+            </div>
+            <div>
+              <a href="./contacto.html">
+                <h4 class="d-none d-lg-block">Contacto</h4>
+                <i class="fa-solid fa-music d-lg-none"></i>
+              </a>
+            </div>
+            <div class="nav-item dropdown">
+              <a
+                class="d-flex align-items-center nav-link"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <h4 class="d-none d-xl-block">Buscar</h4>
+                <i class="fa-solid fa-magnifying-glass d-xl-none"></i>
+              </a>
+              <div class="dropdown-menu">
+                <form class="d-flex px-2" role="search">
+                  <input
+                    class="form-control me-2"
+                    type="text"
+                    id="searchInput"
+                    placeholder="Ingrese su búsqueda"
+                  />
+                  <button
+                    id="searchButton"
+                    class="btn btn-primary"
+                    type="submit"
+                  >
+                    Buscar
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 container-fluid d-flex justify-content-end pe-0">
+            <a
+              class="navbar-brand d-flex gap-2"
+              data-bs-toggle="modal"
+              data-bs-target="#modallogin"
+            >
+              <i class="bi bi-person-circle"></i>
+            </a>
+          </div>
         </div>
-    </main>
+      </nav>
+
+      <main class="contact">
+        <div class="container-fluid">
+          <div class="container-contact">
+            <div class="contact-image">
+              <img
+                src="./Resources/contact.png"
+                alt="Imagen de ejemplo"
+                class="img-contact"
+              />
+            </div>
+            <div class="contact-campos">
+              <form
+                class="campos"
+                action="https://formsubmit.co/danirui230390@gmail.com"
+                method="post"
+              >
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    placeholder="Lilian Plastibol"
+                    maxlength="20"
+                    minlength="6"
+                    name="name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label"
+                    >Correo electrónico</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="user@ejemplo.com"
+                    name="email"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="mensaje" class="form-label">Mensaje</label>
+                  <textarea
+                    class="form-control"
+                    id="mensaje"
+                    rows="4"
+                    placeholder="Escribe tu mensaje aquí"
+                    name="message"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Enviar mensaje
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
 
       <!-- Modal login -->
       <div>
@@ -312,8 +353,7 @@
         </div>
       </div>
 
-
-      <!-- footer -->
+      <!-- Footer -->
       <footer id="pie">
         <div class="footerContent">
           <h3>Seguinos en nuestras redes</h3>
@@ -363,6 +403,7 @@
         <p class="dev">- Todos los derechos reservados a quién corresponda -</p>
       </footer>
     </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

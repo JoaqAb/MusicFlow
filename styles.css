@@ -73,8 +73,10 @@ i:hover,
 }
 
 .dropdown-menu {
-  min-width: 350px;
-  transform: translateX(-75%);
+  width: 500px;
+  max-width: 95vw;
+  position: absolute;
+  transform: translateX(-62%) translateY(25%);
   background-color: #000000;
 }
 

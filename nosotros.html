@@ -44,79 +44,86 @@
         </div>
       </div>
 
-<!-- Navbar -->
-<nav class="navbar w-100 position-fixed top-0 left-0 z-2">
-  <div
-    class="container-fluid w-100 d-flex justify-content-between align-items-center"
-  >
-    <div class="col-4 container-fluid">
-      <a class="navbar-brand d-flex gap-2" href="./index.html">
-        <img
-          src="./Resources/logo_provisorio.png"
-          alt="Logo"
-          width="30"
-          class="d-inline-block align-text-top"
-        />
-        <span class="text-white d-none d-md-block m-flow"> MusicFlow </span>
-      </a>
-    </div>
-
-    <div class="col-4 d-flex justify-content-between align-items-center">
-      <div>
-        <a href="./index.html">
-          <h4 class="d-none d-lg-block">Inicio</h4>
-          <i class="fa-solid fa-house d-lg-none"></i>
-        </a>
-      </div>
-      <div>
-        <a href="./nosotros.html">
-          <h4 class="d-none d-lg-block">Nosotros</h4>
-          <i class="fa-regular fa-compass d-lg-none"></i>
-        </a>
-      </div>
-      <div>
-        <a href="./contacto.html">
-          <h4 class="d-none d-lg-block">Contacto</h4>
-          <i class="fa-solid fa-music d-lg-none"></i>
-        </a>
-      </div>
-      <div class="nav-item dropdown">
-        <a
-          class="d-flex align-items-center nav-link"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
+      <!-- Navbar -->
+      <nav class="navbar w-100 position-fixed top-0 left-0 z-2">
+        <div
+          class="container-fluid w-100 d-flex justify-content-between align-items-center"
         >
-          <h4 class="d-none d-xl-block">Buscar</h4>
-          <i class="fa-solid fa-magnifying-glass d-xl-none"></i>
-        </a>
-        <div class="dropdown-menu">
-          <form class="d-flex px-2" role="search">
-            <input
-              id="search"
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </div>
+          <div class="col-4 container-fluid">
+            <a class="navbar-brand d-flex gap-2" href="./index.html">
+              <img
+                src="./Resources/logo_provisorio.png"
+                alt="Logo"
+                width="30"
+                class="d-inline-block align-text-top"
+              />
+              <span class="text-white d-none d-md-block m-flow">
+                MusicFlow
+              </span>
+            </a>
+          </div>
 
-    <div class="col-4 container-fluid d-flex justify-content-end pe-0">
-      <a
-        class="navbar-brand d-flex gap-2"
-        data-bs-toggle="modal"
-        data-bs-target="#modallogin"
-      >
-      <i class="bi bi-person-circle"></i>
-      </a>
-    </div>
-  </div>
-</nav>
+          <div class="col-4 d-flex justify-content-between align-items-center">
+            <div>
+              <a href="./index.html">
+                <h4 class="d-none d-lg-block">Inicio</h4>
+                <i class="fa-solid fa-house d-lg-none"></i>
+              </a>
+            </div>
+            <div>
+              <a href="./nosotros.html">
+                <h4 class="d-none d-lg-block">Nosotros</h4>
+                <i class="fa-regular fa-compass d-lg-none"></i>
+              </a>
+            </div>
+            <div>
+              <a href="./contacto.html">
+                <h4 class="d-none d-lg-block">Contacto</h4>
+                <i class="fa-solid fa-music d-lg-none"></i>
+              </a>
+            </div>
+            <div class="nav-item dropdown">
+              <a
+                class="d-flex align-items-center nav-link"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <h4 class="d-none d-xl-block">Buscar</h4>
+                <i class="fa-solid fa-magnifying-glass d-xl-none"></i>
+              </a>
+              <div class="dropdown-menu">
+                <form class="d-flex px-2" role="search">
+                  <input
+                    class="form-control me-2"
+                    type="text"
+                    id="searchInput"
+                    placeholder="Ingrese su búsqueda"
+                  />
+                  <button
+                    id="searchButton"
+                    class="btn btn-primary"
+                    type="submit"
+                  >
+                    Buscar
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4 container-fluid d-flex justify-content-end pe-0">
+            <a
+              class="navbar-brand d-flex gap-2"
+              data-bs-toggle="modal"
+              data-bs-target="#modallogin"
+            >
+              <i class="bi bi-person-circle"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
 
       <div class="container justify-content-center m-5">
         <div class="row justify-content-center">
@@ -129,14 +136,6 @@
               nosotros en este viaje musical y descubre un nuevo mundo de
               emociones sonoras con MusicFlow!
             </p>
-            <div class="imagen-padding col-md-4 ms-4 d-none d-md-block">
-              <img
-                src="https://thumbs.dreamstime.com/b/alegre-hombre-afroamericano-escuchando-m%C3%BAsica-usando-aud%C3%ADfonos-inal%C3%A1mbricos-y-relajante-relajado-joven-barbudo-blanco-con-ojos-270538470.jpg"
-                width="400"
-                height="300"
-                class="rounded-circle img-fluid shadow"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -220,7 +219,7 @@
         </div>
       </main>
 
-      <!-- Modal login -->
+      <!-- Modal Login -->
       <div>
         <div
           class="modal fade"
@@ -247,17 +246,19 @@
                 <div class="container-fluid">
                   <div class="row d-flex">
                     <div>
-                      <form method="post" novalidate>
+                      <form method="post">
                         <div class="form-group">
                           <label>Email:</label>
                           <input
                             autofocus
                             type="email"
+                            maxlength="30"
                             placeholder="Email"
                             id="loginEmail"
                             name="email"
                             class="form-control"
                             required="required"
+                            autocomplete="off"
                           />
                         </div>
 
@@ -273,6 +274,8 @@
                             required="required"
                           />
                         </div>
+
+                        <div id="mensajeModal" class="mt-2"></div>
 
                         <div class="form-group d-flex gap-3 mt-3">
                           <div class="col-6 w-auto">
@@ -333,20 +336,34 @@
                 <div class="container-fluid">
                   <div class="row d-flex">
                     <div>
-                      <form id="registroForm" novalidate>
+                      <form id="registroForm">
                         <div class="form-group">
+                          <label>Nombre:</label>
+                          <input
+                            autofocus
+                            type="text"
+                            placeholder="Nombre"
+                            maxlength="12"
+                            id="registroNombre"
+                            name="nombre"
+                            class="form-control"
+                            required="required"
+                            autocomplete="off"
+                          />
+                        </div>
+                        <div class="form-group mt-3">
                           <label>Email:</label>
                           <input
                             autofocus
                             type="email"
                             placeholder="Email"
+                            maxlength="30"
                             id="registroEmail"
                             name="email"
                             class="form-control"
                             required="required"
                           />
                         </div>
-
                         <div class="form-group mt-3">
                           <label>Contraseña:</label>
                           <input
@@ -360,6 +377,8 @@
                           />
                         </div>
 
+                        <div id="mensajeModal"></div>
+
                         <div class="form-group d-flex gap-3 mt-3">
                           <div class="col-6 w-auto">
                             <button
@@ -371,6 +390,7 @@
                           </div>
                           <div class="col-6 w-auto">
                             <a
+                              id="btnCerrarModal"
                               data-bs-toggle="modal"
                               data-bs-target="#modallogin"
                               class="btn log-btn text-white w-100"
@@ -388,7 +408,28 @@
         </div>
       </div>
 
-      <!-- footer -->
+      <!-- Toast -->
+      <div
+        id="toast"
+        class="toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-autohide="true"
+        data-bs-delay="3000"
+      >
+        <div class="toast-body text-center">
+          <span>Mensaje del toast.</span>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Cerrar"
+          ></button>
+        </div>
+      </div>
+
+      <!-- Footer -->
       <footer id="pie">
         <div class="footerContent">
           <h3>Seguinos en nuestras redes</h3>

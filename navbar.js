@@ -7,11 +7,3 @@ window.addEventListener("scroll", function () {
     navbar.classList.remove("opaque");
   }
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-  document
-    .querySelector(".dropdown")
-    .addEventListener("shown.bs.dropdown", function () {
-      document.querySelector("#search").focus();
-    });
-});
